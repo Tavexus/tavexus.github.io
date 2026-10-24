@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Yardım · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="active" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head"><h1>Yardım</h1></div>
+<p class="muted">Her ekranda başlığın yanındaki <strong>?</strong> düğmesi o ekranın kısa yardımını açar. Bütün konular aşağıda.</p>
+<nav aria-label="Yardım konuları" class="card help-toc">
+<ul class="plain-list"><li><a href="#baslarken">İlk adımlar</a></li><li><a href="#panel">Panel ve üstteki durum şeridi</a></li><li><a href="#markalar">Markalar</a></li><li><a href="#paylasimlar">Paylaşım yapmak</a></li><li><a href="#bildirimler">Bildirimler</a></li><li><a href="#kasa">Kasa (şifreler)</a></li><li><a href="#ice-aktar">Şifreleri içe aktarmak</a></li><li><a href="#kullanicilar">Kullanıcılar ve roller</a></li><li><a href="#ayarlar">Ayarlar</a></li><li><a href="#yedek">Yedek ve geri yükleme</a></li><li><a href="#hesabim">Hesabım ve parolam</a></li><li><a href="#baglan">Hesap bağlama</a></li><li><a href="#lisans">Lisans</a></li><li><a href="#guncelleme">Güncelleme</a></li><li><a href="#takvim">Takvim ve tekrarlayan paylaşımlar</a></li><li><a href="#onay">Onay adımı</a></li><li><a href="#analiz">Analiz</a></li><li><a href="#rapor">Aylık müşteri raporu</a></li><li><a href="#yorumlar">Yorum kutusu</a></li><li><a href="#yapay-zeka">Metin önerisi (yapay zekâ)</a></li><li><a href="#google-isletme">Google İşletme Profili</a></li></ul>
+</nav>
+<section class="card help-topic" id="baslarken">
+<h2>İlk adımlar</h2>
+<ol class="help-steps">
+<li>Markanızı ekleyin: <strong>Markalar › + Yeni marka</strong>.</li>
+<li>Markanın Facebook, Instagram veya YouTube hesabını bağlayın: <strong>Hesaplar</strong> sayfasındaki bağlama düğmeleri.</li>
+<li>İlk paylaşımınızı hazırlayın: <strong>Paylaşımlar › + Yeni paylaşım</strong>. Hemen gönderebilir veya bir saat seçebilirsiniz.</li>
+</ol>
+<p class="small muted">Program açık kaldığı sürece zamanı gelen paylaşımları kendisi gönderir.</p>
+</section>
+<section class="card help-topic" id="panel">
+<h2>Panel ve üstteki durum şeridi</h2>
+<p>Panel, yaklaşan ve son paylaşımlarınızı gösterir.</p>
+<p>Sayfanın üstündeki renkli şerit programın durumunu söyler: yeşil <strong>Her şey yolunda</strong> demektir. Sarı veya kırmızı bir satır görürseniz yanındaki düğmeye basın; düğme sizi sorunu çözeceğiniz yere götürür.</p>
+</section>
+<section class="card help-topic" id="markalar">
+<h2>Markalar</h2>
+<p>Her marka kendi hesaplarını kullanır; bir markanın hesabı başka bir markada kullanılamaz (markalar karışmaz).</p>
+<p>Yeni marka için <strong>+ Yeni marka</strong> düğmesine basın, adını yazın, isterseniz logosunu seçin. Bir markayı silmek için önce onun hesaplarını ve paylaşımlarını kaldırın.</p>
+</section>
+<section class="card help-topic" id="paylasimlar">
+<h2>Paylaşım yapmak</h2>
+<p>Paylaşım hazırlamak için <strong>+ Yeni paylaşım</strong>: markayı, hesapları ve metni seçin; isterseniz resim veya video ekleyin.</p>
+<p><strong>Şimdi paylaş</strong> hemen gönderir. Bir saat seçerseniz paylaşım o saatte kendiliğinden gönderilir. Bir hesapta sorun olursa paylaşımın sayfasında ne olduğu ve ne yapmanız gerektiği yazar; sorunu giderip <strong>Başarısızları tekrar dene</strong> düğmesine basın.</p>
+</section>
+<section class="card help-topic" id="bildirimler">
+<h2>Bildirimler</h2>
+<p>Her paylaşımın sonucu burada görünür: tamamlandı, kısmen yapıldı veya yapılamadı. Yeni bildirim olduğunda üstteki şeritte haber verilir.</p>
+<p>İsterseniz sonuçlar Telegram'a da gönderilir: <strong>Ayarlar › Bildirimler</strong>.</p>
+</section>
+<section class="card help-topic" id="kasa">
+<h2>Kasa (şifreler)</h2>
+<p>Kasa, hesaplarınızın şifrelerini ve bağlantı bilgilerini şifreli olarak saklar. Hesap bağladığınızda gerekli bilgiler kasaya kendiliğinden kaydedilir; çoğu zaman kasayı açmanız gerekmez.</p>
+<p>Kasayı yalnız Yönetici ve Editör görür. Program kilitliyken kasa da kilitlidir.</p>
+</section>
+<section class="card help-topic" id="ice-aktar">
+<h2>Şifreleri içe aktarmak</h2>
+<p>Tarayıcınızda kayıtlı şifreleri programa aktarabilirsiniz. Önce tarayıcıdan şifreleri bir dosyaya kaydedin:</p>
+<ul>
+<li><strong>Chrome:</strong> Ayarlar › Otomatik doldurma ve şifreler › Google Şifre Yöneticisi › Ayarlar › Şifreleri dışa aktar.</li>
+<li><strong>Edge:</strong> Ayarlar › Profiller › Şifreler › üç nokta › Şifreleri dışa aktar.</li>
+<li><strong>Bitwarden:</strong> Araçlar › Kasayı dışa aktar › Dosya biçimi: .csv.</li>
+</ul>
+<p>Sonra <strong>Kasa › İçe aktar</strong> sayfasında dosyayı seçin, önizlemeye bakın ve <strong>İçe aktar</strong>'a basın. Aynı kayıt ikinci kez eklenmez. Bitince dışa aktardığınız dosyayı bilgisayarınızdan silin: içinde şifreleriniz açık yazılıdır.</p>
+</section>
+<section class="card help-topic" id="kullanicilar">
+<h2>Kullanıcılar ve roller</h2>
+<p>Çalışanlarınıza kendi kullanıcı adlarını verin; herkes kendi parolasıyla girer ve yaptığı işler <strong>Kayıtlar</strong> sayfasında görünür.</p>
+<ul>
+<li><strong>Yönetici:</strong> her şeyi yapar.</li>
+<li><strong>Editör:</strong> kendisine verilen markaların hesaplarını ve paylaşımlarını yönetir.</li>
+<li><strong>Sadece paylaşım:</strong> yalnız paylaşım hazırlar ve gönderir.</li>
+</ul>
+</section>
+<section class="card help-topic" id="ayarlar">
+<h2>Ayarlar</h2>
+<p>Ayarlar'ı yalnız Yönetici değiştirir: otomatik kilit süresi, yedek, çalışma biçimi (tek bilgisayar veya ağ) ve bildirimler.</p>
+<p>Emin olmadığınız bir ayarı değiştirmeyin; program varsayılan ayarlarla güvenle çalışır.</p>
+</section>
+<section class="card help-topic" id="yedek">
+<h2>Yedek ve geri yükleme</h2>
+<p>Program her gün kendiliğinden yedek alır. İkinci bir kopya için bir USB bellek veya ağ klasörü seçmeniz önerilir: <strong>Ayarlar › Yedek</strong>.</p>
+<p>Geri yüklemek için aynı bölümden bir yedek seçin; program yeniden açılır.</p>
+</section>
+<section class="card help-topic" id="hesabim">
+<h2>Hesabım ve parolam</h2>
+<p>Kendi adınızı ve parolanızı <strong>Hesabım</strong> sayfasından değiştirirsiniz. Parolanızı unutursanız bir Yönetici size geçici parola verebilir.</p>
+</section>
+<section class="card help-topic" id="baglan">
+<h2>Hesap bağlama</h2>
+<h3>Hesap bağlama</h3>
+<ol>
+<li><strong>Hesaplar</strong> sayfasında markanızı seçin.</li>
+<li><strong>Facebook sayfanı bağla</strong>, <strong>Instagram'ı bağla</strong> veya <strong>YouTube'u bağla</strong> düğmesine basın.</li>
+<li>Açılan Facebook ya da Google sayfasında kendi hesabınızla girin ve <strong>izin verin</strong>.</li>
+<li>Facebook / Instagram için listeden sayfanızı veya hesabınızı işaretleyip <strong>Seçilenleri ekle</strong>'ye basın.
+    YouTube kendiliğinden eklenir.</li>
+</ol>
+<p>Bilgileriniz yalnız bu bilgisayarda, şifreli olarak saklanır.</p>
+<p><strong>Instagram</strong> yalnız bir Facebook sayfasına bağlı <strong>işletme</strong> veya <strong>içerik üreticisi</strong> hesabıyla çalışır.</p>
+<p><strong>YouTube</strong>, <strong>Facebook</strong> ve <strong>Instagram</strong>'ı programın kurulu olduğu bilgisayardan bağlayın (güvenlik için onay yalnız o bilgisayara geri döner). Telefondan veya başka bir bilgisayardan bu düğmeler soluk görünür.</p>
+<p>Üstte “bağlantısı bitti” yazarsa <strong>Yeniden bağlan</strong> düğmesine basın ve aynı adımları tekrarlayın.</p>
+</section>
+<section class="card help-topic" id="lisans">
+<h2>Lisans</h2>
+<h2>Lisans</h2>
+<p>Program ilk kurulduğunda 30 gün deneme sürümü olarak çalışır. Deneme süresince en fazla 5 marka ve 3 kullanıcı eklenebilir.</p>
+<h3>Lisans nasıl alınır?</h3>
+<ol>
+<li><strong>Ayarlar › Lisans</strong> bölümünü açın.</li>
+<li><strong>Lisans talep kodu</strong> kutusunun altındaki <strong>Kopyala</strong> düğmesine basın ve kodu satıcınıza gönderin (e-posta veya WhatsApp).</li>
+<li>Satıcınızın gönderdiği lisans anahtarını <strong>Lisans anahtarı</strong> kutusuna yapıştırıp <strong>Etkinleştir</strong>'e basın.</li>
+</ol>
+<h3>Paketler</h3>
+<ul>
+<li><strong>Dükkân:</strong> 1 marka, 1 kullanıcı</li>
+<li><strong>Ajans 5:</strong> 5 marka, 3 kullanıcı</li>
+<li><strong>Ajans 15:</strong> 15 marka, 10 kullanıcı</li>
+</ul>
+<p>Paketinizden fazla marka veya kullanıcı varsa hiçbiri silinmez; yalnız yenisi eklenemez.</p>
+<h3>Modüller</h3>
+<p>Bazı özellikler pakete ek olarak ayrı alınır: <strong>Analiz ve aylık rapor</strong>, <strong>Google İşletme Profili</strong>, <strong>Yorum kutusu</strong> ve (hazır olunca) <strong>TikTok</strong>. "Hepsi bir arada" ilk üçünü içerir. Deneme süresince hepsi açıktır.</p>
+<p>Lisansınızda olmayan bir modül menüde soluk görünür ve nedenini yazar. Modülü sonradan alırsanız satıcınız yeni bir anahtar gönderir; <strong>Ayarlar › Lisans</strong> bölümüne yapıştırmanız yeter, kurulum gerekmez. Modül kapansa da verileri silinmez; yeniden açılınca kaldığı yerden görünür.</p>
+<p>Hangi modüllerin açık olduğunu <strong>Ayarlar › Lisans</strong> bölümündeki <strong>Modüller</strong> satırında görebilirsiniz.</p>
+<h3>Lisans biterse</h3>
+<p>Verileriniz silinmez. Yeni paylaşım ve yeni kayıt yapılamaz; zamanlanmış paylaşımlar bekler ve lisans girilince gönderilir. Giriş, yedek, geri yükleme, güncelleme ve Lisans bölümü her zaman çalışır.</p>
+<p>Program başka bir bilgisayara taşınırsa Kurulum Kimliği değişir ve yeni lisans gerekir.</p>
+</section>
+<section class="card help-topic" id="guncelleme">
+<h2>Güncelleme</h2>
+<p>Program yeni sürümleri kendiliğinden kurar: her gece (varsayılan 03:00) yeni sürüm var mı bakılır, varsa kurulur.</p>
+<ul>
+<li><strong>Şimdi güncelle:</strong> Ayarlar › Güncelleme bölümünde. En geç 5 dakika içinde başlar; program birkaç dakika kapanır ve kendiliğinden yeniden açılır.</li>
+<li><strong>Verileriniz korunur:</strong> güncellemeden önce bir kopyası alınır (program klasöründe <em>yedekler</em>). Bir şey ters giderse önceki sürüm geri konur.</li>
+<li><strong>Yalnız Tavexus'un hazırladığı sürümler</strong> kurulur; indirilen dosya kurulmadan önce denetlenir.</li>
+<li>Bilgisayar o saatte kapalıysa güncelleme bir sonraki gece yapılır. Saati veya otomatik kurulumu aynı bölümden değiştirebilirsiniz.</li>
+<li>İnternet yoksa güncelleme yapılmaz; program eskisi gibi çalışmaya devam eder.</li>
+<li>Gece güncellemesi için bilgisayar o saatte açık ve Windows oturumunuz açık olmalı (program kapalı olabilir).</li>
+<li><strong>"Kurulum.bat'ı bir kez çalıştırın" yazıyorsa:</strong> programın kurulu olduğu klasördeki (ör. D:\Tavexus Social Manager) Kurulum.bat'a çift tıklayın, yönetici iznine "Evet" deyin ve "onarılsın mı?" sorusuna E yazın. Verileriniz korunur; uyarı kaybolur. Kurulum.bat'ı yalnız bu klasörden çalıştırın; başka bir yerden gelen (e-posta, indirilen) dosyayı çalıştırmayın. Kurulum.bat'tan sonra da uyarı geçmezse Tavexus satıcınıza haber verin.</li>
+</ul>
+<p>Güncellemeyi yalnız Yönetici başlatabilir.</p>
+</section>
+<section class="card help-topic" id="takvim">
+<h2>Takvim ve tekrarlayan paylaşımlar</h2>
+<p><strong>Takvim</strong> paylaşımlarınızı ay veya hafta olarak gösterir. Her paylaşımın yanında saati, markasının rengi ve durumu yazar: taslak, zamanlandı, onay bekliyor, paylaşıldı veya başarısız.</p>
+<p>Bir paylaşımı başka bir güne <strong>sürükleyip bırakın</strong>; saat aynı kalır. Telefonda veya klavyeyle paylaşımın altındaki <strong>Taşı</strong> düğmesine basıp yeni günü seçin. Paylaşılmış paylaşımlar ve geçmiş günler değiştirilemez.</p>
+<p>Boş bir güne tıklayınca o gün için yeni paylaşım hazırlanır.</p>
+<p><strong>Tekrarla:</strong> yeni paylaşım hazırlarken “Tekrarla” bölümünden her hafta (günleri seçin), her ay (ayın günü) veya belirli günler seçebilirsiniz. Bitiş tarihi gerekir (en fazla 12 ay, en fazla 100 paylaşım). Her tarih ayrı bir paylaşım olur; birini değiştirmek yalnız onu değiştirir. Paylaşımın sayfasındaki “Bütün tarihleri gör” bağlantısından <strong>Seriyi durdur</strong> diyebilirsiniz: henüz paylaşılmamış gelecek paylaşımlar silinir, paylaşılmış olanlar kalır.</p>
+</section>
+<section class="card help-topic" id="onay">
+<h2>Onay adımı</h2>
+<p><strong>Onay adımı</strong> isteğe bağlıdır ve başlangıçta kapalıdır. Yönetici, Kullanıcılar sayfasında “Sadece paylaşım” rolündeki bir kullanıcı için <strong>Paylaşımları onaya gitsin</strong> kutusunu işaretleyebilir.</p>
+<p>Bu kullanıcı “Zamanla” veya “Şimdi paylaş” dediğinde paylaşım hemen gitmez, <strong>onay bekler</strong>. O markanın Yöneticisi veya Editörü üstteki şeritte ve Bildirimler'de görür; paylaşımın sayfasında <strong>Onayla</strong> ya da not yazıp <strong>Geri gönder</strong> der.</p>
+<p>Onaylanan paylaşım seçilen saatte (saat geçtiyse hemen) paylaşılır. Geri gönderilen paylaşım taslak olur; hazırlayan kişi notu görür, düzeltip yeniden gönderir. Onaylanmış bir paylaşımı hazırlayan kişi değiştirirse paylaşım yeniden onaya gider.</p>
+</section>
+<section class="card help-topic" id="analiz">
+<h2>Analiz</h2>
+<p>Analiz sayfası, markalarınızın hesaplarındaki takipçi, erişim, izlenme ve etkileşim sayılarını gösterir. Sayılar her gün bir kez kendiliğinden okunur ve bu bilgisayarda saklanır.</p>
+<ul>
+<li>Sayılar yalnız program açıkken ve kasa açıkken toplanır. Program kapalı kaldığı günler “veri yok” görünür.</li>
+<li>Her hesap yalnız kendi kayıtlı bilgileriyle okunur; markalar birbirine karışmaz.</li>
+<li>Bir hesapta “Analiz için yeniden bağlayın” yazıyorsa, <strong>Hesaplar</strong> sayfasında o hesabı yeniden bağlayın ve okuma iznini verin.</li>
+<li>“En iyi gün ve saat” en az 10 gönderinin sayısı okunduktan sonra görünür.</li>
+<li>Telegram kanallarında yalnız üye sayısı okunabilir; gönderi başına sayı yoktur.</li>
+<li>Günlük ayrıntı 24 ay saklanır; daha eski aylar aylık özet olarak kalır.</li>
+</ul>
+</section>
+<section class="card help-topic" id="rapor">
+<h2>Aylık müşteri raporu</h2>
+<p>Aylık müşteri raporu, seçtiğiniz markanın bir aylık sayılarını müşteriye gönderilecek bir PDF ve bir Excel dosyası olarak hazırlar.</p>
+<ol>
+<li><strong>Analiz › Aylık rapor</strong> sayfasında markayı ve ayı seçin.</li>
+<li><strong>Raporu hazırla</strong> düğmesine basın.</li>
+<li>Listeden <strong>PDF</strong> düğmesiyle dosyayı indirin ve müşterinize e-postayla gönderin.</li>
+</ol>
+<p>Raporda toplamlar, önceki aya göre değişim, en iyi gönderiler ve en iyi gün / saat bulunur. Ajans adınızı ve logonuzu Yönetici <strong>Ayarlar › Rapor</strong> bölümünde girer; marka logosu Markalar sayfasındaki logodur.</p>
+<p>İsterseniz her ayın 1'inde geçen ayın kısa özeti markanın Telegram'ına da gönderilir (Ayarlar › Rapor; varsayılan kapalı).</p>
+</section>
+<section class="card help-topic" id="yorumlar">
+<h2>Yorum kutusu</h2>
+<p><strong>Yorumlar</strong> sayfasında Facebook sayfanıza, Instagram işletme hesabınıza ve YouTube kanalınıza son 30 günde paylaştığınız gönderilere gelen yorumlar tek listede görünür. Liste program açıkken 15 dakikada bir yenilenir.</p>
+<ol>
+<li>Üstten marka, platform veya <strong>Yanıtlanmadı</strong> seçerek listeyi daraltın.</li>
+<li>Yorumun altındaki kutuya yanıtınızı yazıp <strong>Yanıtı gönder</strong>'e basın. Yanıt hemen o platformda görünür.</li>
+</ol>
+<p>Sayfanız veya kanalınız bir yorumu (bu programdan ya da doğrudan platformdan) yanıtladıysa yorum <strong>Yanıtlandı</strong> olarak işaretlenir.</p>
+<p>Yalnız size atanmış markaların yorumlarını görür ve yanıtlarsınız. Paylaşımları onaya giden kullanıcılar yorumlara yanıt veremez; yanıtı Yönetici veya Editör yazar.</p>
+<p>Yorumlar müşterilerinizin yazdıklarıdır: yalnız bu bilgisayarda (ve yedeklerinde) saklanır, başka yere gönderilmez ve <strong>90 gün sonra kendiliğinden silinir</strong>. Günlük yedeklerde en fazla 30 gün daha kalır; yani bir yorum en geç yaklaşık 4 ay sonra bu bilgisayardan tamamen silinmiş olur.</p>
+<p>Bir hesap için “yeniden bağlayın” yazıyorsa Hesaplar sayfasında o hesabı yeniden bağlayın: yorumları okumak için yeni izin gerekir.</p>
+</section>
+<section class="card help-topic" id="yapay-zeka">
+<h2>Metin önerisi (yapay zekâ)</h2>
+<p>Paylaşım formundaki <strong>Metin öner</strong> düğmesi, yazdığınız konuya göre üç kısa paylaşım metni ve uygun hashtag'ler önerir.</p>
+<ol>
+<li>Metin kutusuna konuyu birkaç kelimeyle yazın (ör. “hafta sonu %20 indirim”).</li>
+<li><strong>Metin öner</strong>'e basın; öneriler genellikle bir dakikada gelir (ilk öneri biraz daha uzun sürebilir).</li>
+<li>Beğendiğiniz önerinin altındaki <strong>Bunu kullan</strong> düğmesine basın: metin kutusuna yazılır. Dilerseniz düzeltin, sonra her zamanki gibi kaydedin veya zamanlayın.</li>
+</ol>
+<p>Öneriler bu bilgisayarda kurulu yapay zekâyla hazırlanır: metniniz internete gönderilmez ve ücret ödenmez. Hiçbir öneri kendiliğinden kaydedilmez.</p><p class="demo-not small">Demo notu: Metin önerisi için bilgisayara bir kez “Yapay zekâ kurulumu” yapılır; bu ücretli ayrı bir hizmettir. Kurulumdan sonra öneriler için ayrıca ücret ödenmez.</p>
+<p>Düğme soluksa bu bilgisayarda yapay zekâ kurulu değildir; kurulum için satıcınızla görüşün.</p>
+</section>
+<section class="card help-topic" id="google-isletme">
+<h2>Google İşletme Profili</h2>
+<p class="alert alert-info">Bu özellik şu an kapalı: Google’ın Tavexus’a onayı bekleniyor — hazır olunca açılacak. Aşağıdaki adımlar özellik açılınca geçerlidir.</p>
+<p><strong>Google İşletme Profili</strong>, işletmenizin Google Haritalar ve Google aramada görünen sayfasıdır. Bu özellik açıkken oraya güncelleme, teklif ve etkinlik paylaşabilirsiniz.</p>
+<ol>
+<li><strong>Hesaplar</strong> sayfasında markanızı seçip <strong>Google İşletme Profilini bağla</strong>'ya basın.</li>
+<li>Açılan Google sayfasında işletmenizi yöneten hesapla girin ve izin verin.</li>
+<li>Listeden işletmenizi seçip <strong>Bağla</strong>'ya basın.</li>
+<li>Paylaşım formunda Google İşletme Profili hesabını işaretleyin, gönderi türünü (Güncelleme, Teklif, Etkinlik) seçin.</li>
+</ol>
+<p>Google bu gönderilerde yalnız metin kabul eder; metin en fazla 1.500 karakter olabilir.</p>
+</section>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

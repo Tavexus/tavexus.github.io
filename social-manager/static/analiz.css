@@ -1,0 +1,23 @@
+/* Analiz ve aylık rapor (Aşama 3b, P2) — yalnız analiz sayfalarından bağlanır */
+.analiz-filtre { align-items: flex-end; }
+.analiz-filtre label { min-width: 150px; }
+.analiz-kartlar { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.analiz-kart { border-top: 4px solid var(--line); }
+.analiz-kart-bas { display: flex; flex-direction: column; margin-bottom: .6rem; overflow-wrap: anywhere; }
+.analiz-kart .stats { grid-template-columns: 1fr 1fr; } /* 3b E16: iki sütun, sayılar bölünmez */
+.analiz-kart .stats dd { font-size: 1.05rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.analiz-egri { display: block; width: 100%; height: 48px; margin-top: .7rem; background: var(--bg); border-radius: 6px; }
+.analiz-egri-not { margin: .2rem 0 0; }
+.analiz-alt { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.analiz-liste { list-style: decimal; padding-left: 1.2rem; }
+.analiz-liste li { display: flex; flex-direction: column; overflow-wrap: anywhere; }
+.analiz-gunler { list-style: none; margin: .5rem 0; padding: 0; }
+.analiz-gunler li { display: grid; grid-template-columns: 6.5rem 1fr 5.5rem; gap: .5rem; align-items: center; padding: .15rem 0; }
+.analiz-cubuk { display: block; width: 100%; height: .7rem; background: var(--bg); border-radius: 4px; overflow: hidden; }
+.analiz-cubuk rect { fill: var(--teal, #14A3A3); }
+@media (max-width: 700px) {
+  .analiz-alt { grid-template-columns: 1fr; }
+  .analiz-kart .stats { grid-template-columns: 1fr 1fr; }
+  .analiz-filtre label { min-width: 0; flex: 1 1 100%; }
+  .analiz-gunler li { grid-template-columns: 5.5rem 1fr 4.5rem; }
+}

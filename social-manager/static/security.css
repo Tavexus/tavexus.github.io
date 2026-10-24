@@ -1,0 +1,53 @@
+/* Yedek ve kurtarma kodu ekranları (Aşama 1) */
+.wrap-any { overflow-wrap: anywhere; word-break: break-word; }
+.facts { margin: 0 0 1rem; display: grid; gap: .5rem; }
+.facts div { display: grid; grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); gap: .75rem; }
+.facts dt { color: var(--muted); font-size: .88rem; }
+.facts dd { margin: 0; min-width: 0; }
+.plain-list { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
+.backup-list { display: grid; gap: .4rem; margin-bottom: .5rem; }
+.backup-item { flex-direction: row; align-items: flex-start; gap: .6rem; font-weight: 400; margin: 0; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.backup-item input { margin-top: .3rem; width: auto; }
+.backup-item:hover { background: var(--bg); }
+.recovery-card { max-width: 640px; width: 100%; }
+.recovery-code { font-family: var(--mono); font-size: 1.35rem; font-weight: 700; letter-spacing: .08em; color: var(--navy); background: var(--teal-l); border: 2px dashed var(--teal); border-radius: 10px; padding: 1rem; margin: 1rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem .9rem; }
+.recovery-code span { white-space: nowrap; }
+.recovery-steps { margin: 0 0 1rem; padding-left: 1.2rem; display: grid; gap: .35rem; }
+.recovery-print-only { display: none; }
+.code-input { font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+@media (max-width: 640px) {
+  .facts div { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .recovery-code { font-size: 1.1rem; }
+}
+@media print {
+  body { background: #fff; }
+  .topbar, .footer, .flashes, .no-print, form { display: none !important; }
+  .auth-wrap, .container { background: #fff; padding: 0; display: block; }
+  .card { border: 0; box-shadow: none; }
+  .recovery-print-only { display: block; }
+  .recovery-code { border-color: #000; background: #fff; color: #000; }
+}
+/* Kullanıcılar / Hesabım (Aşama 2) */
+.roles-help { margin-bottom: 1rem; }
+.roles-help summary { cursor: pointer; font-weight: 600; }
+.roles-help .plain-list { margin-top: .6rem; }
+.user-list { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+.user-card h2 { margin: 0 0 .25rem; font-size: 1.05rem; overflow-wrap: anywhere; }
+.user-card p { margin: .15rem 0; overflow-wrap: anywhere; }
+.user-off { opacity: .75; }
+.user-row { display: flex; gap: .5rem; align-items: flex-end; flex-wrap: wrap; margin: .6rem 0 .2rem; }
+.user-role { flex: 1 1 10rem; min-width: 0; }
+.user-actions { margin-top: .6rem; }
+.role-choice { border: 1px solid var(--line); border-radius: 8px; padding: .6rem .8rem; margin: 0; display: grid; gap: .45rem; min-width: 0; }
+.role-choice legend { font-weight: 600; padding: 0 .3rem; }
+.role-choice .inline-check { align-items: flex-start; }
+.temp-password { font-size: 1.5rem; font-weight: 700; letter-spacing: .06em; text-align: center; padding: .6rem; border: 2px dashed var(--line); border-radius: 8px; overflow-wrap: anywhere; user-select: all; }
+/* Kullanıcılar: marka yetkileri */
+.user-brands fieldset { border: 1px solid var(--line); border-radius: 8px; padding: .5rem .8rem; margin: .6rem 0 .2rem;
+  display: flex; flex-wrap: wrap; gap: .35rem 1rem; min-width: 0; }
+.user-brands legend { font-weight: 600; padding: 0 .3rem; }
+.user-brands fieldset > div { flex-basis: 100%; }
+.user-brands fieldset:disabled { opacity: .6; }
+/* Kayıtlar: süzgeç */
+.audit-filter { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: flex-end; }
+.audit-filter label { flex: 1 1 12rem; min-width: 0; }
