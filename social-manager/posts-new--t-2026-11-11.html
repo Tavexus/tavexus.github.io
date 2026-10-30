@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Yeni paylaşım · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="static/takvim.css" rel="stylesheet"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="active" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Yeni paylaşım</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Paylaşım yapmak"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Paylaşım yapmak</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Paylaşım yapmak</strong></p>
+<p>Paylaşım hazırlamak için <strong>+ Yeni paylaşım</strong>: markayı, hesapları ve metni seçin; isterseniz resim veya video ekleyin.</p>
+<p><strong>Şimdi paylaş</strong> hemen gönderir. Bir saat seçerseniz paylaşım o saatte kendiliğinden gönderilir. Bir hesapta sorun olursa paylaşımın sayfasında ne olduğu ve ne yapmanız gerektiği yazar; sorunu giderip <strong>Başarısızları tekrar dene</strong> düğmesine basın.</p>
+<p class="small"><a href="yardim.html#paylasimlar">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-ghost" href="posts.html">← Geri</a></div>
+</div>
+<form action="#" class="card form-card" data-demo-paylasim="" enctype="multipart/form-data" id="post-form" method="post">
+
+<label>Marka *
+    <select id="post-brand" name="brand_id" required="">
+<option value="">— Seçin —</option>
+<option value="1">Yıldız Pastanesi</option><option value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select></label>
+<fieldset class="targets">
+<legend>Hesaplar <small class="muted">(yalnızca seçili markanın aktif hesapları)</small></legend>
+<p class="small muted" id="no-brand-hint">Önce marka seçin.</p>
+<label class="target-item" data-brand="1" data-can-post="1" data-media="image,text,video">
+<input name="account_ids" type="checkbox" value="1"/>
+<span><strong>Yıldız Pastanesi (Facebook)</strong> <span class="small muted">Facebook Sayfası · Görsel, Metin, Video</span></span>
+</label>
+<label class="target-item" data-brand="1" data-can-post="1" data-media="image,video">
+<input name="account_ids" type="checkbox" value="2"/>
+<span><strong>Yıldız Pastanesi (Instagram)</strong> <span class="small muted">Instagram İşletme · Görsel, Video</span></span>
+</label>
+<label class="target-item" data-brand="1" data-can-post="1" data-media="video">
+<input name="account_ids" type="checkbox" value="3"/>
+<span><strong>Yıldız Pastanesi (YouTube)</strong> <span class="small muted">YouTube · Video</span></span>
+</label>
+<label class="target-item" data-brand="2" data-can-post="1" data-media="image,text,video">
+<input name="account_ids" type="checkbox" value="4"/>
+<span><strong>Mavi Kuaför (Facebook)</strong> <span class="small muted">Facebook Sayfası · Görsel, Metin, Video</span></span>
+</label>
+<label class="target-item" data-brand="2" data-can-post="1" data-media="image,video">
+<input name="account_ids" type="checkbox" value="5"/>
+<span><strong>Mavi Kuaför (Instagram)</strong> <span class="small muted">Instagram İşletme · Görsel, Video</span></span>
+</label>
+<label class="target-item" data-brand="2" data-can-post="1" data-media="video">
+<input name="account_ids" type="checkbox" value="6"/>
+<span><strong>Mavi Kuaför (YouTube)</strong> <span class="small muted">YouTube · Video</span></span>
+</label>
+<label class="target-item" data-brand="3" data-can-post="1" data-media="image,text,video">
+<input name="account_ids" type="checkbox" value="7"/>
+<span><strong>Ege Kafe (Facebook)</strong> <span class="small muted">Facebook Sayfası · Görsel, Metin, Video</span></span>
+</label>
+<label class="target-item" data-brand="3" data-can-post="1" data-media="image,video">
+<input name="account_ids" type="checkbox" value="8"/>
+<span><strong>Ege Kafe (Instagram)</strong> <span class="small muted">Instagram İşletme · Görsel, Video</span></span>
+</label>
+<label class="target-item" data-brand="3" data-can-post="1" data-media="video">
+<input name="account_ids" type="checkbox" value="9"/>
+<span><strong>Ege Kafe (YouTube)</strong> <span class="small muted">YouTube · Video</span></span>
+</label>
+<p class="small muted" hidden="" id="no-accounts-hint">Bu markanın aktif hesabı yok. <a href="accounts.html#baglan">Hesap bağlayın</a>.</p>
+</fieldset>
+<label>Metin<textarea maxlength="65000" name="text" rows="7"></textarea></label>
+<div class="stack" data-url="/yz/oner" id="yz">
+<button aria-describedby="yz-neden" class="btn btn-sm" disabled="" id="yz-oner" type="button">Metin öner</button>
+<p class="small muted" id="yz-neden">Demo: bu özellik bilgisayara yapay zekâ kurulduktan sonra açılır (“Yapay zekâ kurulumu” ücretli ayrı hizmettir).</p>
+<div aria-live="polite" id="yz-sonuc"></div>
+</div>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script defer="" src="static/yz.js"></script>
+<label>Başlık <small class="muted">(YouTube için; boşsa metnin ilk satırı kullanılır — en fazla 100 karakter)</small>
+<input maxlength="100" name="title" type="text" value=""/></label>
+<label>Medya <small class="muted">(görsel: jpg, jpeg, png, webp — video: mp4, mov, m4v, webm — en fazla 1 GB)</small>
+<input accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.m4v,.webm" aria-describedby="media-size-error" data-current-type="" data-image-ext="jpg,jpeg,png,webp" data-invalid-msg="Desteklenmeyen dosya türü. Görsel: jpg, jpeg, png, webp — Video: mp4, mov, m4v, webm." data-max-bytes="1073741824" data-too-large-msg="Dosya çok büyük (en fazla 1 GB). Daha küçük bir dosya seçin." data-video-ext="mp4,mov,m4v,webm" id="post-media" name="media" type="file"/></label>
+<div class="alert alert-danger" hidden="" id="media-size-error" role="alert"></div>
+<div class="alert alert-warning" hidden="" id="media-warning"></div>
+<label>Zamanlama <small class="muted">(bu bilgisayarın yerel saati)</small>
+<input aria-describedby="past-warning" data-past-msg="Seçtiğiniz saat geçmişte kaldı. İleri bir saat seçin veya “Şimdi paylaş”ı kullanın." id="post-when" name="scheduled_at" type="datetime-local" value="2026-11-11T10:00"/></label>
+<div aria-live="polite" id="past-warning" role="status"></div>
+<details class="seri">
+<summary>Tekrarla <small class="muted">(isteğe bağlı)</small></summary>
+<p class="small muted">Saat, yukarıdaki Zamanlama alanından alınır. Her tarih ayrı bir paylaşım olarak oluşturulur (en fazla 100 paylaşım, en fazla 12 ay); sonradan birini değiştirmek yalnız onu değiştirir.</p>
+<fieldset class="seri-turler">
+<legend class="sr-only">Tekrar türü</legend>
+<label class="inline-check"><input checked="" name="seri_tur" type="radio" value=""/> <span>Tekrarlama</span></label>
+<label class="inline-check"><input name="seri_tur" type="radio" value="hafta"/> <span>Her hafta</span></label>
+<label class="inline-check"><input name="seri_tur" type="radio" value="ay"/> <span>Her ay</span></label>
+<label class="inline-check"><input name="seri_tur" type="radio" value="gunler"/> <span>Belirli günler</span></label>
+</fieldset>
+<fieldset class="seri-alan seri-alan-hafta">
+<legend>Her hafta: hangi günler?</legend>
+<div class="seri-gunler">
+<label class="inline-check"><input name="seri_gun" type="checkbox" value="0"/> <span>Pazartesi</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="1"/> <span>Salı</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="2"/> <span>Çarşamba</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="3"/> <span>Perşembe</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="4"/> <span>Cuma</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="5"/> <span>Cumartesi</span></label><label class="inline-check"><input name="seri_gun" type="checkbox" value="6"/> <span>Pazar</span></label>
+</div>
+</fieldset>
+<label class="seri-alan seri-alan-ay">Her ay: ayın kaçıncı günü? <small class="muted">(29, 30 veya 31 seçilirse o günü olmayan aylarda ayın son günü)</small>
+<input inputmode="numeric" max="31" min="1" name="seri_ayin_gunu" type="number" value=""/></label>
+<label class="seri-alan seri-alan-gunler">Belirli günler <small class="muted">(virgülle ayırın, ör. 05.11.2026, 12.11.2026 — son gün bitiş sayılır)</small>
+<input maxlength="2000" name="seri_tarihler" type="text" value=""/></label>
+<label>Bitiş tarihi <small class="muted">(her hafta / her ay için gerekli)</small>
+<input name="seri_bitis" type="date" value=""/></label>
+</details>
+<div class="form-actions">
+<button class="btn btn-primary" data-confirm-click="Seçili hesaplarda hemen paylaşılsın mı?" data-confirm-needs="input[name=account_ids]:checked" name="action" type="submit" value="now">Şimdi paylaş</button>
+<button class="btn btn-accent" name="action" type="submit" value="schedule">Zamanla</button>
+<button class="btn" name="action" type="submit" value="draft">Taslak kaydet</button>
+</div>
+</form>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="static/app.js"></script>
+</body>
+</html>

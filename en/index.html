@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tavexus Software — Software made for your business. Your data stays yours.</title>
+<meta name="description" content="Tavexus business software for motorcycle dealers, phone shops, photo studios, rental and apartment-building managers, businesses selling on promissory notes, and accountants in Türkiye. Runs on your own computer. Try the demos without installing anything.">
+<link rel="canonical" href="https://tavexus.com/en/">
+<link rel="alternate" hreflang="tr" href="https://tavexus.com/">
+<link rel="alternate" hreflang="en" href="https://tavexus.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://tavexus.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/ikon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/tavexus-ikon-192.png">
+<meta name="theme-color" content="#0F2A44">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:site_name" content="Tavexus Software">
+<meta property="og:title" content="Tavexus Software — Software made for your business">
+<meta property="og:description" content="Business software that runs on your own computer. Installation, training, automatic backups and updates included. Try it in your browser right now.">
+<meta property="og:url" content="https://tavexus.com/en/">
+<meta property="og:image" content="https://tavexus.com/assets/og.jpg">
+<style>
+/* Font is self-hosted (no connection to Google) — Bricolage Grotesque, SIL OFL */
+@font-face{font-family:"Bricolage";font-style:normal;font-display:swap;font-weight:200 800;src:url(/assets/font/bricolage-grotesque-latin-ext-opsz-normal.woff2) format("woff2-variations");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Bricolage";font-style:normal;font-display:swap;font-weight:200 800;src:url(/assets/font/bricolage-grotesque-latin-opsz-normal.woff2) format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --kagit:#EEF2F5;       /* açık, serin zemin */
+  --kart:#FFFFFF;
+  --murekkep:#0F2A44;    /* Tavexus laciverti (logo) */
+  --murekkep-2:#1C3C5E;
+  --ikincil:#4B5B70;
+  --vurgu:#14B8A6;       /* Tavexus turkuazı (logo) — süs, çizgi */
+  --vurgu-koyu:#0F766E;  /* okunur turkuaz — yazı */
+  --cizgi:#CBD5DF;
+  --wa:#1F8F4E;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--kagit);color:var(--murekkep);font:400 17px/1.55 "Bricolage",system-ui,-apple-system,"Segoe UI",sans-serif;font-optical-sizing:auto}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--vurgu);outline-offset:3px;border-radius:4px}
+.sar{max-width:1180px;margin:0 auto;padding:0 28px}
+.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* üst şerit */
+.ust{display:flex;align-items:center;gap:20px;padding:20px 0}
+.marka{display:block;line-height:0}
+.marka img{height:40px;width:auto}
+.ust nav{margin-left:auto;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.ust nav a{text-decoration:none;color:var(--ikincil);font-weight:500}
+.ust nav a:hover{color:var(--murekkep)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff!important;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn-wa:hover{filter:brightness(1.08)}
+.dil{display:inline-flex;align-items:center;gap:6px;font-size:15px;color:var(--ikincil)}
+.dil b{color:var(--murekkep);font-weight:800}
+.ust nav .dil a{font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:6px 2px}
+.btn-wa svg{width:18px;height:18px;fill:currentColor;flex:none}
+
+/* giriş */
+.giris{padding:52px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;border-bottom:2px solid var(--murekkep)}
+.giris h1{margin:0;font-weight:800;font-size:clamp(40px,6.2vw,82px);line-height:.98;letter-spacing:-.035em;max-width:14ch}
+.giris h1 em{font-style:normal;color:var(--vurgu-koyu)}
+.giris .yan p{margin:0 0 20px;color:var(--ikincil);font-size:19px;max-width:40ch}
+.giris .yan p b{color:var(--murekkep);font-weight:700}
+.rozetler{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;grid-column:1/-1}
+.rozetler li{background:#fff;border:1px solid var(--cizgi);border-radius:999px;padding:7px 14px;font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.rozetler li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--vurgu)}
+
+/* bölüm başlıkları */
+.bolum-bas{display:flex;align-items:baseline;gap:16px;padding:46px 0 6px}
+.bolum-bas h2{margin:0;font-weight:800;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.025em}
+.bolum-bas p{margin:0;color:var(--ikincil)}
+
+/* program dizini */
+.dizin{list-style:none;margin:0;padding:0}
+.urun{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:40px;padding:38px 0;border-bottom:1px solid var(--cizgi);align-items:center;scroll-margin-top:20px}
+.urun h3{margin:0 0 6px;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1;letter-spacing:-.03em}
+.kim{margin:0 0 14px;font-weight:600;color:var(--vurgu-koyu);font-size:18px}
+.urun .ne{margin:0 0 22px;color:var(--ikincil);max-width:54ch}
+.dugmeler{display:flex;flex-wrap:wrap;gap:10px}
+.dugme{display:inline-block;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px;border:2px solid var(--murekkep);transition:background .15s,color .15s;line-height:1.2}
+.dugme.ana{background:var(--murekkep);color:#fff}
+.dugme.ana:hover{background:var(--murekkep-2)}
+.dugme.yan{background:transparent}
+.dugme.yan:hover{background:var(--murekkep);color:#fff}
+.dugme.teklif{border-color:var(--wa);color:var(--wa)}
+.dugme.teklif:hover{background:var(--wa);color:#fff}
+.onizleme{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--cizgi);background:#fff;box-shadow:0 18px 40px -22px rgba(15,42,68,.55);transform:rotate(-1.2deg);transition:transform .25s}
+.urun:nth-child(even) .onizleme{transform:rotate(1.2deg)}
+.onizleme:hover,.onizleme:focus-visible{transform:rotate(0) scale(1.02)}
+.onizleme img{display:block;width:100%;height:auto;aspect-ratio:16/10}
+.dil-not{margin:12px 0 0;font-size:14px;color:var(--ikincil)}
+.kart .dil-not{margin-top:10px}
+.urun .yasal{margin:14px 0 0;font-size:14px;color:var(--ikincil)}
+
+/* diğer programlar */
+.diger{padding:10px 0 40px;border-bottom:1px solid var(--cizgi)}
+.diger-izgara{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:22px}
+.kart{background:#fff;border:1px solid var(--cizgi);border-radius:14px;padding:18px 18px 22px;display:flex;flex-direction:column}
+.kart-resim{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--cizgi);margin-bottom:16px}
+.kart-resim img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.kart h3{margin:0 0 8px;font-weight:800;font-size:clamp(22px,2.4vw,28px);letter-spacing:-.02em}
+.kart .kim{font-size:15px;margin-bottom:8px}
+.kart .ne{margin:0 0 18px;color:var(--ikincil);flex:1}
+
+/* neden + nasıl */
+.neden{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--cizgi);border:1px solid var(--cizgi);border-radius:16px;overflow:hidden;margin:22px 0 10px}
+.neden div{background:#fff;padding:22px 22px 24px}
+.neden h3{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.01em}
+.neden p{margin:0;color:var(--ikincil);font-size:16px}
+.adimlar{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:adim}
+.adimlar li{counter-increment:adim;border-top:3px solid var(--murekkep);padding-top:14px}
+.adimlar li::before{content:counter(adim,decimal-leading-zero);display:block;font-weight:800;font-size:34px;line-height:1;color:var(--vurgu-koyu);margin-bottom:8px}
+.adimlar h3{margin:0 0 6px;font-size:20px;font-weight:800}
+.adimlar p{margin:0;color:var(--ikincil);font-size:16px}
+.odeme{margin:30px 0 0;background:#fff;border:1px solid var(--cizgi);border-left:5px solid var(--vurgu);border-radius:12px;padding:18px 22px;color:var(--ikincil)}
+.odeme b{color:var(--murekkep)}
+
+/* hakkımızda + iletişim */
+.alt{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:50px 0 40px;align-items:start}
+.alt h2{margin:0 0 14px;font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.02em}
+.hakkinda p{margin:0 0 14px;color:var(--ikincil)}
+.hakkinda p b{color:var(--murekkep)}
+.iletisim{background:var(--murekkep);color:#fff;border-radius:16px;padding:28px;scroll-margin-top:20px}
+.iletisim h2{color:#fff}
+.iletisim p{margin:0 0 18px;color:#C9D4E2}
+.form{display:grid;gap:12px;margin:0 0 20px}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#DCE4EE}
+.form input,.form select,.form textarea{font:inherit;font-size:16px;color:var(--murekkep);background:#fff;border:0;border-radius:8px;padding:11px 12px;width:100%}
+.form textarea{min-height:76px;resize:vertical}
+.form .iki{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form small{color:#A9B7C9;font-size:13px}
+.kanal{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;border-top:1px solid #2B4A6B;padding-top:18px}
+.kanal a{color:#fff;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.kanal a:hover{color:#7FE3D6}
+.kanal svg{width:20px;height:20px;fill:currentColor;flex:none}
+.kanal a.tel{font-size:20px;font-weight:700}
+
+footer{padding:24px 0 44px;color:var(--ikincil);font-size:14px;border-top:1px solid var(--cizgi);display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center}
+footer a{color:var(--ikincil)}
+footer .sag{margin-left:auto}
+
+@media (max-width:1000px){
+  .diger-izgara{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .adimlar{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .giris{grid-template-columns:1fr;gap:18px;padding-top:28px}
+  .urun{grid-template-columns:1fr;gap:20px;padding:30px 0}
+  .onizleme,.urun:nth-child(even) .onizleme{transform:none}
+  .neden{grid-template-columns:1fr 1fr}
+  .alt{grid-template-columns:1fr;gap:32px}
+  .bolum-bas{flex-direction:column;gap:4px}
+}
+@media (max-width:640px){
+  .sar{padding:0 16px}
+  .ust{flex-wrap:wrap;gap:12px}
+  .ust nav{gap:14px}
+  .ust nav a.menu{display:none}
+  .marka img{height:34px}
+  body{font-size:16px}
+  .diger-izgara,.neden,.adimlar{grid-template-columns:1fr}
+  .form .iki{grid-template-columns:1fr}
+  footer .sag{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+#videoPencere{border:0;padding:0;background:#000;border-radius:12px;width:min(1100px,94vw);max-width:94vw}
+#videoPencere::backdrop{background:rgba(8,18,30,.85)}
+#videoPencere video{display:block;width:100%;height:auto;max-height:84vh;background:#000}
+#videoPencere button{position:absolute;top:8px;right:8px;z-index:2;border:0;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer;background:rgba(255,255,255,.9);color:var(--murekkep)}
+.tr-ad{margin:-4px 0 10px;font-size:14px;color:var(--ikincil)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.4 7H4v.4l8 5.6 8-5.6V7h-.4L12 12.2Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1Zm6-8a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM12 4.6c2.4 0 2.7 0 3.6.1a4.9 4.9 0 0 1 1.7.3 3 3 0 0 1 1.7 1.7 4.9 4.9 0 0 1 .3 1.7c.1.9.1 1.2.1 3.6s0 2.7-.1 3.6a4.9 4.9 0 0 1-.3 1.7 3 3 0 0 1-1.7 1.7 4.9 4.9 0 0 1-1.7.3c-.9.1-1.2.1-3.6.1s-2.7 0-3.6-.1a4.9 4.9 0 0 1-1.7-.3A3 3 0 0 1 5 17.3a4.9 4.9 0 0 1-.3-1.7C4.6 14.7 4.6 14.4 4.6 12s0-2.7.1-3.6A4.9 4.9 0 0 1 5 6.7 3 3 0 0 1 6.7 5a4.9 4.9 0 0 1 1.7-.3c.9-.1 1.2-.1 3.6-.1M12 3c-2.4 0-2.8 0-3.7.1a6.6 6.6 0 0 0-2.2.4 4.6 4.6 0 0 0-2.6 2.6 6.6 6.6 0 0 0-.4 2.2C3 9.2 3 9.6 3 12s0 2.8.1 3.7a6.6 6.6 0 0 0 .4 2.2 4.6 4.6 0 0 0 2.6 2.6 6.6 6.6 0 0 0 2.2.4c.9.1 1.3.1 3.7.1s2.8 0 3.7-.1a6.6 6.6 0 0 0 2.2-.4 4.6 4.6 0 0 0 2.6-2.6 6.6 6.6 0 0 0 .4-2.2c.1-.9.1-1.3.1-3.7s0-2.8-.1-3.7a6.6 6.6 0 0 0-.4-2.2 4.6 4.6 0 0 0-2.6-2.6 6.6 6.6 0 0 0-2.2-.4C14.8 3 14.4 3 12 3Z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4A21 21 0 0 0 14.3 4c-2.3 0-3.9 1.4-3.9 4v2.4H8v3h2.4V21Z"/></symbol>
+</svg>
+
+<div class="sar">
+  <header class="ust">
+    <a class="marka" href="/en/" aria-label="Tavexus Software — home"><img src="/assets/logo.svg" alt="Tavexus Software" width="157" height="40"></a>
+    <nav aria-label="Main menu">
+      <a class="menu" href="#programs">Programs</a>
+      <a class="menu" href="#services">Services</a>
+      <a class="menu" href="#how-we-work">How it works</a>
+      <a class="menu" href="#about">About us</a>
+      <a class="menu" href="#contact">Contact</a>
+      <a class="btn-wa" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20information%20about%20Tavexus%20software." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      <span class="dil" role="group" aria-label="Language / Dil"><a href="/" hreflang="tr" lang="tr">TR</a><span aria-hidden="true">|</span><b aria-current="true">EN</b></span>
+    </nav>
+  </header>
+
+  <section class="giris">
+    <h1>Software made for your business. <em>Your data stays yours.</em></h1>
+    <div class="yan">
+      <p>Tavexus programs are installed on your own computer and keep working even when the internet is down. <b>Installation, training, automatic backups and updates are included.</b> Before you decide, try the programs right away in your browser with sample data.</p>
+      <div class="dugmeler">
+        <a class="dugme ana" href="#programs">Explore the programs</a>
+        <a class="dugme yan" href="#contact">Request a free trial</a>
+      </div>
+    </div>
+    <ul class="rozetler" aria-label="Highlights">
+      <li>Runs on your own computer</li>
+      <li>Works on phones and tablets</li>
+      <li>Automatic backup every night</li>
+      <li>Automatic updates</li>
+      <li>KVKK-compliant (Turkish data protection law)</li>
+      <li>Support in Turkish</li>
+    </ul>
+  </section>
+
+  <div class="bolum-bas" id="programs">
+    <h2>Our programs</h2>
+    <p>Try before you install: the demos open in your browser, and nothing you enter is sent anywhere.</p>
+  </div>
+
+  <ol class="dizin">
+    <li class="urun" id="envanter">
+      <div>
+        <p class="kim">For motorcycle, bicycle and home-appliance dealers</p>
+        <h3>Tavexus Inventory</h3>
+        <p class="tr-ad">In Turkish: Tavexus Envanter</p>
+        <p class="ne">Track stock by chassis number and handle sales and delivery documents, instalment sales on promissory notes, collections, the daily cash book, servicing, spare parts and sales commissions. Which vehicle arrived when, who bought it, who still owes how much — all in one place.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/envanter/">Open demo (Turkish)</a>
+          <a class="dugme yan video-ac" href="/video/tavexus-envanter-tanitim.mp4" data-kapak="/video/envanter-kapak.jpg">▶ Intro video (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-envanter-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Inventory." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </div>
+      <a class="onizleme" href="/envanter/" tabindex="-1" aria-hidden="true"><img src="/img/envanter.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+
+    <li class="urun" id="social-manager">
+      <div>
+        <p class="kim">For agencies, freelancers and shops</p>
+        <h3>Tavexus Social Manager</h3>
+        <p class="ne">All your brands, all your passwords, all your posts — in one program, on your own computer. Prepare Facebook, Instagram and YouTube posts and choose a time; when it comes, the program publishes them on its own (as long as the computer is on and online). Encrypted password vault, content calendar and an approval step. Account linking, analytics and the comment inbox will be switched on once Facebook and Google have approved Tavexus; the approval process is under way.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/social-manager/">Open demo (Turkish)</a>
+          <a class="dugme yan video-ac" href="/video/tavexus-social-manager-tanitim.mp4" data-kapak="/video/social-manager-kapak.jpg">▶ Intro video (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-social-manager-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Social%20Manager." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+        <p class="yasal"><a href="/social-manager-gizlilik.html" hreflang="tr">Privacy policy (Turkish)</a> · <a href="/social-manager-veri-silme.html" hreflang="tr">Data deletion (Turkish)</a></p>
+      </div>
+      <a class="onizleme" href="/social-manager/" tabindex="-1" aria-hidden="true"><img src="/img/social-manager.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+
+    <li class="urun" id="vitrin">
+      <div>
+        <p class="kim">For phone shops and mobile-phone dealers</p>
+        <h3>Tavexus Phone Shop</h3>
+        <p class="tr-ad">In Turkish: Tavexus Vitrin</p>
+        <p class="ne">Fast checkout by scanning a barcode or IMEI; cash, card, instalments or promissory note. When you buy second-hand phones, record the seller's ID, the IMEI and the e-Devlet (Turkish e-government) check, and print the purchase document, expense voucher and the list for the police. Plus repair and service tracking, a daily cash book and promissory notes.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/vitrin/">Open demo (Turkish)</a>
+          <a class="dugme yan video-ac" href="/video/tavexus-vitrin-tanitim.mp4" data-kapak="/video/vitrin-kapak.jpg">▶ Intro video (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-vitrin-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Phone%20Shop." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </div>
+      <a class="onizleme" href="/vitrin/" tabindex="-1" aria-hidden="true"><img src="/img/vitrin.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+
+    <li class="urun" id="studyo">
+      <div>
+        <p class="kim">For photo studios and wedding photographers</p>
+        <h3>Tavexus Studio</h3>
+        <p class="tr-ad">In Turkish: Tavexus Stüdyo</p>
+        <p class="ne">Shoot scheduling, packages and extras, deposits and instalment plans, contracts and promissory notes. Your clients view their photos online and pick the ones for their album themselves; their selection reaches you instantly.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/studyo/">Open demo (Turkish)</a>
+          <a class="dugme yan" href="/studyo/#/g/7w9FLat-VFB83OYOqVqNfg">Client gallery demo (Turkish)</a>
+          <a class="dugme yan video-ac" href="/video/tavexus-studyo-tanitim.mp4" data-kapak="/video/studyo-kapak.jpg">▶ Intro video (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-studyo-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Studio." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </div>
+      <a class="onizleme" href="/studyo/" tabindex="-1" aria-hidden="true"><img src="/img/studyo.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+
+    <li class="urun" id="senet">
+      <div>
+        <p class="kim">For businesses that sell on instalments and promissory notes</p>
+        <h3>Tavexus Promissory Notes</h3>
+        <p class="tr-ad">In Turkish: Tavexus Senet Takip</p>
+        <p class="ne">Customer and guarantor records; enter a sale and the promissory notes and due dates are created automatically. See what is due today and what is overdue, take partial payments, handle protests, and print receipts and account statements.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/senet/">Open demo (Turkish)</a>
+          <a class="dugme yan" href="/Tavexus-Senet-Takip-Tanitim.html" hreflang="tr">Step-by-step tour (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-senet-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Promissory%20Notes." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </div>
+      <a class="onizleme" href="/senet/" tabindex="-1" aria-hidden="true"><img src="/img/senet.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+
+    <li class="urun" id="apart">
+      <div>
+        <p class="kim">For owners of serviced apartments and rental flats</p>
+        <h3>Tavexus Rentals</h3>
+        <p class="tr-ad">In Turkish: Tavexus Apart Takip</p>
+        <p class="ne">All your units on one screen: who has paid and who is behind. Tenant cards, rent and utility bill tracking, printable rental contracts and monthly promissory notes, rent increases based on the consumer price index (TÜFE), expenses and an annual report.</p>
+        <div class="dugmeler">
+          <a class="dugme ana" href="/Tavexus-Apart-Takip-Tanitim.html" hreflang="tr">Open the tour (Turkish)</a>
+          <a class="dugme yan" href="/Tavexus-Apart-Takip-Tanitim.pdf" download>Tour as PDF (Turkish)</a>
+          <a class="dugme yan" href="/brosur/Tavexus-apart-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a>
+          <a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Rentals." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </div>
+      <a class="onizleme" href="/Tavexus-Apart-Takip-Tanitim.html" tabindex="-1" aria-hidden="true"><img src="/img/apart.jpg" alt="" loading="lazy" width="960" height="600"></a>
+    </li>
+  </ol>
+
+  <section class="diger" aria-labelledby="otherTitle">
+    <div class="bolum-bas"><h2 id="otherTitle">Our other programs</h2></div>
+    <div class="diger-izgara">
+      <article class="kart" id="apartman">
+        <a class="kart-resim" href="/brosur/Tavexus-apartman-brosur.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/brosur/kapak-apartman.jpg" alt="" loading="lazy" width="640" height="400"></a>
+        <p class="kim">For apartment-building and housing-complex managers and management boards</p>
+        <h3>Tavexus Building Manager</h3>
+        <p class="tr-ad">In Turkish: Tavexus Apartman Yönetim</p>
+        <p class="ne">Monthly fees are charged automatically, payments clear the oldest debt first, and expenses are tracked fund by fund. Meeting and resolution book, voting by phone, WhatsApp announcements, and a screen where residents can check their own balance.</p>
+        <div class="dugmeler"><a class="dugme ana" href="/brosur/Tavexus-apartman-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20Building%20Manager." target="_blank" rel="noopener">Request a quote</a></div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </article>
+      <article class="kart" id="belgebul">
+        <a class="kart-resim" href="/brosur/Tavexus-belge-bul-brosur.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/brosur/kapak-belge-bul.jpg" alt="" loading="lazy" width="640" height="400"></a>
+        <p class="kim">For offices, companies and anyone with a lot of paperwork</p>
+        <h3>Tavexus DocFinder</h3>
+        <p class="tr-ad">In Turkish: Tavexus Belge Bul</p>
+        <p class="ne">Search inside the PDFs, Word and Excel files, scanned documents and receipt photos on your computer by simply asking a question: “Where is the invoice for the scooters we bought last year?” Within seconds it shows the document, where it is stored and a short answer. Everything runs on your own computer.</p>
+        <div class="dugmeler"><a class="dugme ana" href="/brosur/Tavexus-belge-bul-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20DocFinder." target="_blank" rel="noopener">Request a quote</a></div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </article>
+      <article class="kart" id="musavir">
+        <a class="kart-resim" href="/brosur/Tavexus-musavir-brosur.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/brosur/kapak-musavir.jpg" alt="" loading="lazy" width="640" height="400"></a>
+        <p class="kim">For accountants (mali müşavir) and accounting firms</p>
+        <h3>Tavexus e-Invoice Desk</h3>
+        <p class="tr-ad">In Turkish: Tavexus Müşavir</p>
+        <p class="ne">Drop in the e-Fatura and e-Arşiv ZIP files downloaded from Luca, GİB (Turkish Revenue Administration) or your e-invoice provider: every invoice becomes a PDF in its official layout, and purchase and sales invoices are combined into one PDF you can print in one go. Summary in Excel, withholding tax (tevkifat) warnings, archive by client and month. Invoices never leave your office.</p>
+        <div class="dugmeler"><a class="dugme ana video-ac" href="/video/tavexus-musavir-tanitim.mp4" data-kapak="/video/musavir-kapak.jpg">▶ Intro video (Turkish)</a><a class="dugme yan" href="/brosur/Tavexus-musavir-brosur.pdf" target="_blank" rel="noopener">📄 Brochure (Turkish)</a><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20a%20quote%20for%20Tavexus%20e-Invoice%20Desk." target="_blank" rel="noopener">Request a quote</a></div>
+        <p class="dil-not">Software interface in Turkish — English version in progress.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="diger" id="services" aria-labelledby="servicesTitle" style="scroll-margin-top:20px">
+    <div class="bolum-bas"><h2 id="servicesTitle">Our services</h2><p>For businesses</p></div>
+    <div class="diger-izgara">
+      <article class="kart">
+        <p class="kim">For businesses introducing new software or a new IT setup</p>
+        <h3>Project Consulting</h3>
+        <p class="ne">Together with you, we plan the right software and computer setup for your business: needs analysis, installation plan, migration from your old system, network and backup setup.</p>
+        <div class="dugmeler"><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20information%20and%20a%20quote%20for%20Tavexus%20Project%20Consulting." target="_blank" rel="noopener">Request a quote</a></div>
+      </article>
+      <article class="kart">
+        <p class="kim">For you and your staff</p>
+        <h3>Training</h3>
+        <p class="ne">We teach you and your staff how to use our programs, on site or remotely: day-to-day tasks, reports, backups and data security.</p>
+        <div class="dugmeler"><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20information%20and%20a%20quote%20for%20Tavexus%20Training." target="_blank" rel="noopener">Request a quote</a></div>
+      </article>
+      <article class="kart">
+        <p class="kim">After installation</p>
+        <h3>Support</h3>
+        <p class="ne">Remote or on-site support after installation: troubleshooting, updates and new requirements. Optional Software Support Agreement for 1, 3 or 12 months.</p>
+        <div class="dugmeler"><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20information%20and%20a%20quote%20for%20Tavexus%20Support." target="_blank" rel="noopener">Request a quote</a></div>
+      </article>
+    </div>
+    <div class="bolum-bas"><h2 id="corporateTitle" style="font-size:clamp(24px,2.8vw,32px)">Corporate Services</h2></div>
+    <div class="diger-izgara">
+      <article class="kart">
+        <p class="kim">For growing and multi-branch businesses</p>
+        <h3>Software Selection and Migration Projects</h3>
+        <p class="ne">Needs analysis, software/SaaS selection, data migration from legacy systems and go-live; experience in hotels, travel and multi-branch businesses.</p>
+      </article>
+      <article class="kart">
+        <p class="kim">For your software and IT projects</p>
+        <h3>Project Management</h3>
+        <p class="ne">We manage your software and IT projects from start to finish: planning, vendor management, testing, training and handover.</p>
+      </article>
+      <article class="kart">
+        <p class="kim">For needs specific to your business</p>
+        <h3>Custom Software Development</h3>
+        <p class="ne">Custom software and integrations built for your business, where off-the-shelf programs fall short.</p>
+      </article>
+    </div>
+    <div class="dugmeler" style="margin-top:22px"><a class="dugme teklif" href="https://wa.me/905454301969?text=Hello%2C%20I%27d%20like%20to%20talk%20about%20Tavexus%20Corporate%20Services." target="_blank" rel="noopener">Request a corporate quote</a></div>
+  </section>
+
+  <section aria-labelledby="whyTitle">
+    <div class="bolum-bas"><h2 id="whyTitle">Why Tavexus?</h2></div>
+    <div class="neden">
+      <div><h3>Your data stays with you</h3><p>The program runs on your own computer. Your customer, sales and document data are not sent to any cloud.</p></div>
+      <div><h3>Works even when the internet is down</h3><p>Your daily work doesn't depend on an internet connection. Phones and tablets on the same network can connect too.</p></div>
+      <div><h3>Automatic backups and updates</h3><p>An automatic backup every night, plus an optional second copy on a USB drive. New features and fixes are installed automatically overnight.</p></div>
+      <div><h3>Built with KVKK in mind</h3><p>Masked national ID numbers, encrypted documents, user permissions, activity logs and automatic sign-out.</p></div>
+      <div><h3>Made for your line of business</h3><p>Each program was written for a specific type of business, so its screens, documents and calculations speak the language of that trade.</p></div>
+      <div><h3>We install it and train you</h3><p>We handle the installation and train you at your workplace. If you have a question, just message us on WhatsApp.</p></div>
+    </div>
+  </section>
+
+  <section id="how-we-work" aria-labelledby="howTitle" style="scroll-margin-top:20px">
+    <div class="bolum-bas"><h2 id="howTitle">How we work</h2></div>
+    <ol class="adimlar">
+      <li><h3>Take a look</h3><p>Open the demo, watch the video or ask us on WhatsApp. If you like, we can show you the program at your workplace.</p></li>
+      <li><h3>Try it free</h3><p>We install the program on your computer, and you use it with your own data during the free trial period.</p></li>
+      <li><h3>Rent it</h3><p>If you like it, you continue with a one-time installation fee and a monthly, quarterly or yearly rental.</p></li>
+      <li><h3>Relax</h3><p>Support, bug fixes and updates are included for as long as you rent. If a payment is missed, your data is not deleted.</p></li>
+    </ol>
+    <p class="odeme"><b>Payment:</b> by bank transfer (havale / EFT), with an invoice. We agree on the price and the installation date together — just send us a message for a quote.</p>
+  </section>
+
+  <section class="alt">
+    <div class="hakkinda" id="about" style="scroll-margin-top:20px">
+      <h2>About us</h2>
+      <p><b>Tavexus Yazılım</b> (Tavexus Software) develops simple, Turkish-language programs that run on your own computer, for small and medium-sized businesses.</p>
+      <p>Our founder, Mehmet Şeref Dağ, has <b>more than 30 years</b> of experience in hospitality, tourism and enterprise software implementations across Türkiye, the Middle East and Europe. Our programs grew out of the day-to-day needs of real businesses and keep evolving with them.</p>
+      <p>We stay with you after the sale: we answer your questions on WhatsApp and add the new features you need.</p>
+    </div>
+
+    <div class="iletisim" id="contact">
+      <h2>Quote and free trial</h2>
+      <p>Fill in the form and your message opens in WhatsApp, ready to send. We'll get back to you as soon as possible.</p>
+      <form class="form" id="talepFormu">
+        <div class="iki">
+          <label>Your name<input name="ad" autocomplete="name" required></label>
+          <label>Your business<input name="isletme" autocomplete="organization"></label>
+        </div>
+        <div class="iki">
+          <label>City<input name="sehir" autocomplete="address-level2"></label>
+          <label>Program or service
+            <select name="program">
+              <option>Tavexus Inventory</option>
+              <option>Tavexus Phone Shop</option>
+              <option>Tavexus Studio</option>
+              <option>Tavexus Promissory Notes</option>
+              <option>Tavexus Rentals</option>
+              <option>Tavexus Building Manager</option>
+              <option>Tavexus DocFinder</option>
+              <option>Tavexus e-Invoice Desk</option>
+              <option>Tavexus Social Manager</option>
+              <option>Project consulting</option>
+              <option>Training</option>
+              <option>Support</option>
+              <option>Corporate services</option>
+              <option>Not decided yet</option>
+            </select>
+          </label>
+        </div>
+        <label>Your message (optional)<textarea name="mesaj" placeholder="e.g. I'd like a free trial / pricing information"></textarea></label>
+        <button class="btn-wa" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Send via WhatsApp</button>
+        <small>Your details are not stored on this website; they reach us only through your WhatsApp message. <a href="/kvkk.html" hreflang="tr" style="color:#A9B7C9">KVKK privacy notice (Turkish)</a></small>
+      </form>
+      <div class="kanal">
+        <a class="tel" href="tel:+905454301969"><svg aria-hidden="true"><use href="#i-tel"/></svg>+90 545 430 19 69</a>
+        <a href="mailto:info@tavexus.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@tavexus.com</a>
+        <a href="https://www.instagram.com/tavexusyazilim/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61595115225271" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+        <a href="https://www.youtube.com/@tavexusyazilim" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="yil">2026</span> Tavexus Yazılım · Muratpaşa, Antalya, Türkiye</span>
+    <a href="/kvkk.html" hreflang="tr">KVKK notice and privacy (Turkish)</a>
+    <span class="sag">The demos run in your browser; nothing you enter is sent anywhere.</span>
+  </footer>
+</div>
+
+<dialog id="videoPencere"><button type="button" aria-label="Close">×</button><video controls playsinline preload="none"></video></dialog>
+<script>
+(function(){
+  var y=document.getElementById('yil'); if(y) y.textContent=new Date().getFullYear();
+  // intro videos open in a dialog
+  var d=document.getElementById('videoPencere');
+  if(d&&d.showModal){
+    var v=d.querySelector('video');
+    var kapat=function(){ v.pause(); v.removeAttribute('src'); v.load(); d.close(); };
+    document.querySelectorAll('a.video-ac').forEach(function(a){
+      a.addEventListener('click',function(e){ e.preventDefault(); v.poster=a.dataset.kapak||''; v.src=a.getAttribute('href'); d.showModal(); v.play().catch(function(){}); });
+    });
+    d.querySelector('button').addEventListener('click',kapat);
+    d.addEventListener('click',function(e){ if(e.target===d) kapat(); });
+    d.addEventListener('cancel',function(e){ e.preventDefault(); kapat(); });
+  }
+  // request form: nothing is stored, a WhatsApp message is prepared
+  var f=document.getElementById('talepFormu');
+  if(f) f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var g=function(n){ return (f.elements[n].value||'').trim(); };
+    var lines=['Hello, I\'m contacting you through tavexus.com.','Name: '+g('ad')];
+    if(g('isletme')) lines.push('Business: '+g('isletme'));
+    if(g('sehir')) lines.push('City: '+g('sehir'));
+    lines.push('Program/service: '+g('program'));
+    if(g('mesaj')) lines.push('Message: '+g('mesaj'));
+    window.open('https://wa.me/905454301969?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>

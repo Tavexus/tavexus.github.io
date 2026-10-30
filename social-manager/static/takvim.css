@@ -1,0 +1,86 @@
+/* Aşama 3b (P1): takvim, seri sayfası, onay adımı. style.css değişkenlerini kullanır. */
+.seri input[type=date], .tk-tasi input[type=date] {
+  font: inherit; font-weight: 400; color: var(--text); background: #fff; border: 1px solid #CBD2DE; border-radius: 7px; padding: .5rem .65rem; width: 100%; min-width: 0;
+}
+.tk-tasi input[type=date] { padding: .25rem .4rem; font-size: .8rem; }
+.badge-onay { background: var(--warn-bg); color: var(--warn); }
+
+.tk-nav { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin: .5rem 0; }
+.tk-nav h2 { margin: 0 auto 0 .5rem; font-size: 1.15rem; order: -1; flex: 1 1 100%; }
+.tk-legend { display: flex; flex-wrap: wrap; gap: .25rem 1rem; list-style: none; padding: 0; margin: .25rem 0; }
+
+.tk { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: .5rem; }
+.tk-head { display: contents; }
+.tk-head div { font-size: .8rem; font-weight: 600; color: var(--muted); text-align: center; padding: .2rem 0; }
+.tk-gun { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: .3rem; min-height: 96px; min-width: 0; }
+.tk-ay .tk-gun { min-height: 96px; }
+.tk-diger { background: transparent; opacity: .7; }
+.tk-gecmis { background: #F7F8FB; }
+.tk-bugun { border-color: var(--teal); box-shadow: inset 0 0 0 1px var(--teal); }
+.tk-hedef { outline: 2px dashed var(--teal); outline-offset: -2px; background: var(--teal-l); }
+.tk-gun-bas { display: flex; align-items: baseline; gap: .35rem; }
+.tk-no { font-weight: 700; color: var(--navy); }
+.tk-ad { font-size: .75rem; color: var(--muted); }
+.tk-ay .tk-ad { display: none; }
+.tk-ekle { margin-left: auto; font-weight: 700; text-decoration: none; color: var(--teal-d); padding: 0 .35rem; border-radius: 5px; }
+.tk-ekle:hover, .tk-ekle:focus { background: var(--teal-l); }
+.tk-bos .tk-ekle::after { content: ""; position: absolute; inset: 0; } /* boş gün: bütün kutu tıklanır */
+.tk-liste { list-style: none; margin: .25rem 0 0; padding: 0; display: grid; gap: 3px; }
+.tk-post { background: var(--bg); border-radius: 6px; padding: .15rem .3rem; font-size: .8rem; min-width: 0; }
+.tk-post[draggable="true"] { cursor: grab; }
+.tk-suruklenen { opacity: .5; }
+.tk-post > a { display: block; color: var(--text); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tk-post > a:hover .tk-metin { text-decoration: underline; }
+.tk-post .swatch { width: 9px; height: 9px; vertical-align: middle; }
+.tk-saat { font-variant-numeric: tabular-nums; font-weight: 600; }
+.tk-marka { font-weight: 600; color: var(--navy); }
+.tk-icon { display: inline-block; min-width: 1.1em; text-align: center; font-weight: 700; }
+.tk-draft { color: #475467; }
+.tk-scheduled { color: #1E4C8F; }
+.tk-onay { color: var(--warn); }
+.tk-posting { color: var(--teal-d); }
+.tk-done { color: var(--ok); }
+.tk-partial, .tk-failed { color: var(--danger); }
+.tk-tasi { font-size: .75rem; }
+.tk-tasi summary { cursor: pointer; color: var(--teal-d); display: inline-block; }
+.tk-tasi form { display: flex; flex-wrap: wrap; gap: .3rem; align-items: flex-end; margin-top: .25rem; }
+.tk-tasi label { margin: 0; font-size: .75rem; }
+.tk-tasi input[type="date"] { max-width: 100%; }
+.tk-hafta .tk-gun { min-height: 160px; }
+.tk-hafta .tk-post > a { white-space: normal; }
+
+@media (max-width: 860px) {
+  .tk { grid-template-columns: 1fr; }
+  .tk-head { display: none; }
+  .tk-gun, .tk-ay .tk-gun, .tk-hafta .tk-gun { min-height: 0; }
+  .tk-ay .tk-ad { display: inline; }
+  .tk-diger.tk-bos { display: none; }
+  .tk-post > a { white-space: normal; }
+}
+
+/* Paylaşım formu: Tekrarla */
+.seri { border: 1px solid var(--line); border-radius: var(--radius); padding: .5rem .75rem; margin: .75rem 0; }
+.seri summary { cursor: pointer; font-weight: 600; }
+.seri fieldset { border: 0; padding: 0; margin: .5rem 0; }
+.seri-turler { display: flex; flex-wrap: wrap; gap: .25rem 1.2rem; }
+.seri-gunler { display: flex; flex-wrap: wrap; gap: .25rem .9rem; }
+.seri-not { margin-top: .5rem; }
+/* 3b E7: yalnız seçilen tekrar türünün alanı görünür (:has desteklemeyen tarayıcıda hepsi görünür) */
+@supports selector(:has(*)) {
+  .seri:has(input[name="seri_tur"][value=""]:checked) .seri-alan,
+  .seri:has(input[name="seri_tur"][value="hafta"]:checked) .seri-alan:not(.seri-alan-hafta),
+  .seri:has(input[name="seri_tur"][value="ay"]:checked) .seri-alan:not(.seri-alan-ay),
+  .seri:has(input[name="seri_tur"][value="gunler"]:checked) .seri-alan:not(.seri-alan-gunler) { display: none; }
+}
+
+/* Onay adımı */
+.onay-kutu { margin-bottom: 1rem; }
+.onay-bas { display: flex; align-items: center; gap: .6rem; }
+.onay-bas h2 { margin: 0; }
+.onay-kutu form { margin-top: .5rem; }
+.onay-kutu textarea { width: 100%; }
+.onay-ayar { margin-top: .5rem; }
+.onay-ayar label { margin: 0; }
+.onay-secim { display: none; }
+.role-choice:has(input[value="paylasim"]:checked) ~ .onay-secim, .onay-secim.onay-secim-acik { display: flex; }
+.tk-bugun { scroll-margin-top: 5.5rem; }

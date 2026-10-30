@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Ayarlar · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="active" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head"><h1>Ayarlar</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Ayarlar"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Ayarlar</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Ayarlar</strong></p>
+<p>Ayarlar'ı yalnız Yönetici değiştirir: otomatik kilit süresi, yedek, çalışma biçimi (tek bilgisayar veya ağ) ve bildirimler.</p>
+<p>Emin olmadığınız bir ayarı değiştirmeyin; program varsayılan ayarlarla güvenle çalışır.</p>
+<p class="small"><a href="yardim.html#ayarlar">Bütün yardım konuları</a></p>
+</div>
+</details></div>
+<div class="grid two">
+<section class="card">
+<h2>Parolanız</h2>
+<p class="small muted">Kendi parolanızı ve adınızı <strong>Hesabım</strong> sayfasından değiştirirsiniz.</p>
+<a class="btn" href="hesabim.html">Hesabım</a>
+<p class="small muted mt">Çalışanları eklemek, rollerini ve markalarını değiştirmek veya parolalarını sıfırlamak için <strong>Kullanıcılar</strong> sayfasını kullanın. Kimin ne yaptığını <strong>Kayıtlar</strong> sayfası gösterir.</p>
+<a class="btn" href="kullanicilar.html">Kullanıcılar</a>
+<a class="btn" href="kayitlar.html">Kayıtlar</a>
+</section>
+<section class="card">
+<h2>Otomatik kilit</h2>
+<p class="small muted">Bu süre boyunca işlem yapılmazsa ekran kilitlenir ve parola tekrar istenir. Zamanlanmış paylaşımlar çalışmaya devam eder. Üst menüdeki <strong>Kasayı kilitle</strong> düğmesi kasayı tamamen kilitler ve paylaşımları durdurur.</p>
+<form action="#" class="stack" method="post">
+
+<label>Süre (dakika)<input max="240" min="1" name="autolock_minutes" required="" type="number" value="10"/></label>
+<button class="btn btn-primary" type="submit">Kaydet</button>
+</form>
+</section>
+</div>
+<section class="card" id="otomatik-kilit-acma">
+<h2>Otomatik kilit açma</h2>
+<p class="small muted">Normalde bilgisayar yeniden başlayınca kasa kilitli açılır; biri giriş yapana kadar zamanlanmış paylaşımlar bekler. Bu ayar açıksa kasa kendiliğinden açılır ve paylaşımlar beklemez. Ekran yine kullanıcı adı ve parola ister.</p>
+<p class="small">Şu an: <span class="dot dot-off"></span><strong>Kapalı</strong></p>
+<div class="alert alert-warning" role="note"><strong>Dikkat:</strong> Bu bilgisayarı açabilen herkes, parola girmeden zamanlanmış paylaşımların çalışmasını sağlar ve kasa bu bilgisayarda açık olur. Yalnız kilitli bir odadaki bilgisayarda açın.</div>
+<p class="small muted">Bu ayar açıkken “Kasayı kilitle” kasayı yalnız program kapanana kadar kilitler: program yeniden açılınca kasa yine kendiliğinden açılır. Kapatmak, daha önce kopyalanmış bir dosyayı geçersiz kılmaz; bir şüphe varsa ilgili kullanıcıyı pasif yapın (kasanın anahtarı yenilenir).</p>
+<form action="#" autocomplete="off" class="stack" method="post">
+<input name="action" type="hidden" value="on"/>
+<label>Parolanız <small>(açmak için)</small>
+<input autocomplete="off" disabled="" name="master_password" type="password"/></label>
+<div><button aria-describedby="au-not-available" class="btn btn-primary" disabled="" type="submit">Riski anladım, aç</button></div>
+<p class="small text-warning" id="au-not-available">Bu düğme kullanılamıyor: bu ayar yalnız Windows'ta çalışır.</p>
+</form>
+</section>
+<link href="static/security.css" rel="stylesheet"/>
+<section class="card backup-card" id="yedek">
+<h2>Yedek</h2>
+<p class="small muted">Program her gün kendiliğinden bir yedek alır ve son 30 günün bütün yedeklerini saklar; daha eskileri kendiliğinden silinir. Şifreleriniz yedekte de şifreli durur. Bir yedek, alındığı tarihteki kullanıcı adları ve parolalarla açılır.</p>
+<dl class="facts">
+<div><dt>Son yedek</dt><dd>24.10.2026 11:02</dd></div>
+<div><dt>Saklanan yedek</dt><dd>1</dd></div>
+<div><dt>Yedeklerin yeri</dt><dd>Bu bilgisayarda, programın kendi klasöründe: <span class="mono wrap-any">(program klasörü)\data\yedekler</span></dd></div>
+</dl>
+<div class="actions">
+<form action="#" class="inline" data-busy="Yedek alınıyor…" method="post">
+<button class="btn btn-primary" type="submit">Şimdi yedekle</button>
+</form>
+<a class="btn" href="ayarlar-yedek-geri-yukle.html">Yedekten geri yükle</a>
+</div>
+<form action="#" autocomplete="off" class="stack mt" method="post">
+
+<label>İkinci kopya klasörü <small>(isteğe bağlı)</small>
+<input name="backup_dir2" placeholder="Örnek: E:\Yedek" spellcheck="false" type="text" value=""/></label>
+<p class="small muted">USB bellek veya ağ diski klasörü. Buraya bir klasör yazarsanız her yedeğin bir kopyası oraya da konur; bilgisayar bozulsa bile yedekleriniz kaybolmaz. Klasörün tam yerini yazın (Dosya Gezgini'nde klasörü açıp üstteki adres çubuğundan kopyalayabilirsiniz). Boş bırakırsanız ikinci kopya alınmaz.</p>
+<label>Parolanız <small>(bu değişikliği onaylamak için)</small>
+<input autocomplete="off" name="master_password" required="" type="password"/></label>
+<div><button class="btn" type="submit">Klasörü kaydet</button></div>
+</form>
+</section>
+<link href="static/network.css" rel="stylesheet"/>
+<section class="card net-card" id="calisma-bicimi">
+<h2>Çalışma biçimi</h2>
+<p>Şu an: <strong>Tek bilgisayar</strong> — program yalnız bu bilgisayarda açılır.</p>
+<p class="small muted"><strong>Ağ biçimi ne yapar?</strong> Program yine bu bilgisayarda çalışır ve bütün bilgiler yine bu bilgisayarda kalır. Aynı iş yerindeki (aynı modeme veya ağa bağlı) diğer bilgisayarlar ve telefonlar programa masaüstündeki bir kısayolla bağlanır. Bağlantı şifrelidir; internetten kimse bağlanamaz.</p>
+<div class="alert alert-warning">Ağ biçiminde <strong>bu bilgisayar açık kalmalı</strong>. Kapalıyken diğer bilgisayarlar programa bağlanamaz ve zamanlanmış paylaşımlar yapılamaz.</div>
+<ol class="net-steps">
+<li>
+<h3>Ağ izni verin <small class="muted">(yalnız bu bilgisayarda, bir kez)</small></h3>
+<dl class="facts">
+<div><dt>Ağ izni</dt><dd><span class="muted">Denetlenemedi</span></dd></div>
+<div><dt>Güvenlik sertifikası bu bilgisayarda</dt><dd><span class="muted">Denetlenemedi</span></dd></div>
+</dl>
+<p><a class="btn btn-primary" data-demo-yok="" download="" href="#">Ağ izni dosyasını indir</a></p>
+<ol class="plain-list small">
+<li>İndirilen <strong>Ag-Izni-Ver.bat</strong> dosyasına <strong>sağ tıklayın</strong> ve <strong>“Yönetici olarak çalıştır”</strong>ı seçin. Windows'un sorusuna <strong>“Evet”</strong> deyin.</li>
+<li>Açılan siyah pencerede <strong>1</strong> tuşuna basın. “Tamam” yazısını görünce pencereyi kapatın ve bu sayfayı yenileyin.</li>
+</ol>
+<p class="small muted"><strong>Chrome</strong> “bu dosya zararlı olabilir” derse <strong>“Sakla”</strong>yı seçin. <strong>Edge</strong>'de indirilenler listesinde dosyanın yanındaki <strong>“…”</strong> düğmesine, sonra <strong>“Sakla”</strong>ya, <strong>“Daha fazla göster”</strong>e ve <strong>“Yine de sakla”</strong>ya tıklayın. Windows “Bilgisayarınız korundu” derse <strong>“Ek bilgi”</strong> ve sonra <strong>“Yine de çalıştır”</strong>a tıklayın. “Açık Dosya - Güvenlik Uyarısı” penceresi çıkarsa <strong>“Çalıştır”</strong>a tıklayın.</p>
+<p class="small muted">Bu dosya ne yapar? Windows'un ağ korumasına (güvenlik duvarına) yalnız bu programın ve yalnız iş yeri ağından (Windows'ta “Özel ağ”) gelen bağlantıların geçebileceğini söyler. Ayrıca programın <strong>güvenlik sertifikasını</strong> (tarayıcıya “bu gerçekten sizin programınız” diyen küçük kimlik dosyası) bu bilgisayara tanıtır; böylece tarayıcı uyarı göstermez. İzni kaldırmak için önce aşağıdan <strong>“Tek bilgisayar biçimine dön”</strong> deyin, sonra aynı dosyayı aynı şekilde çalıştırıp <strong>2</strong>'ye basın (bu bilgisayardaki sertifika da silinir; Windows onay sorarsa “Evet” deyin).</p>
+</li>
+<li>
+<h3>Bu bilgisayarı ağ biçimine geçirin</h3>
+<p class="small text-warning">Bu bilgisayar şu anda bir ağa (modem veya ağ kablosu) bağlı görünmüyor. Ağ bağlantısını kontrol edip bu sayfayı yenileyin.</p>
+<p><button class="btn btn-primary" disabled="" type="button">Ağ biçimine geç</button></p>
+<p class="small muted">Program kapanıp kendiliğinden yeniden açılır (yarım dakika kadar sürebilir). Ağ biçiminde bu bilgisayar da programı yeni adresten açar.</p>
+</li>
+<li>
+<h3>Diğer bilgisayarlarda “Bağlan” dosyasını çalıştırın</h3>
+<p><button aria-describedby="net-step3-reason" class="btn btn-primary" disabled="" type="button">Bağlan dosyasını indir</button></p>
+<p class="small text-warning" id="net-step3-reason">Bu düğme şimdilik kullanılamıyor: önce 2. adımı yapın (program ağ biçiminde çalışırken hazırlanır).</p>
+</li>
+</ol>
+</section>
+<section class="card" id="lisans">
+<h2>Lisans</h2>
+<dl class="facts">
+<div><dt>Durum</dt><dd>Lisans sahibi: Örnek Medya Ajansı</dd></div>
+<div><dt>Paket</dt><dd>Ajans 5</dd></div>
+<div><dt>Kullanım</dt><dd>3 / 5 marka · 3 / 3 kullanıcı</dd></div>
+<div><dt>Lisans türü</dt><dd>Abonelik (bitiş 2027-08-20)</dd></div>
+<div><dt>Modüller</dt><dd>
+<ul id="lisans-moduller">
+<li>Analiz ve aylık rapor: <strong>Var</strong></li><li>Google İşletme Profili: <strong>Var</strong> <span class="muted small">(Google’ın Tavexus’a onayı bekleniyor — hazır olunca açılacak.)</span></li><li>Yorum kutusu: <strong>Var</strong></li><li>TikTok: <strong>Yok</strong></li>
+</ul>
+<span class="small muted">Modül eklemek için satıcınızla görüşün; yeni anahtarı aşağıdaki kutuya yapıştırın.</span>
+</dd></div>
+<div><dt>Kurulum Kimliği</dt><dd><span class="mono wrap-any">DEMO-0000-0000</span></dd></div>
+</dl>
+<p class="small muted">Lisans almak için aşağıdaki talep kodunu kopyalayıp satıcınıza gönderin. Kod bu bilgisayara ve bu kuruluma özeldir; program başka bilgisayara taşınırsa yeni lisans gerekir.</p>
+<label for="lisans-talep">Lisans talep kodu</label>
+<input class="mono" id="lisans-talep" readonly="" spellcheck="false" type="text" value="TVXK1-DEMO-ORNEK-TALEP-KODU"/>
+<div class="actions"><button class="btn btn-sm" data-copy-from="lisans-talep" type="button">Kopyala</button></div>
+<form action="#" autocomplete="off" class="stack mt" id="lisans-form" method="post">
+
+<label>Lisans anahtarı
+      <textarea name="anahtar" placeholder="Satıcınızın gönderdiği anahtarı buraya yapıştırın" required="" rows="3" spellcheck="false"></textarea></label>
+<div><button class="btn btn-primary" type="submit">Etkinleştir</button></div>
+</form>
+<p class="small muted mt">Lisans bitse de verileriniz silinmez: giriş, yedek, geri yükleme ve güncelleme her zaman çalışır. Zamanlanmış paylaşımlar lisans girilince kaldığı yerden gönderilir.</p>
+</section><section class="card" id="bildirimler">
+<h2>Bildirimler</h2>
+<p class="small muted">Her paylaşımın sonucu programın içinde <a href="bildirimler.html">Bildirimler</a> sayfasında görünür. İsterseniz sonuç ayrıca Telegram'a da gönderilir.</p>
+<form action="#" class="stack" method="post">
+
+<label class="inline-check"><input name="telegram_reports" type="checkbox" value="1"/> Paylaşım sonuçlarını Telegram'a da gönder</label>
+<p class="small muted">Açtıktan sonra her markanın Telegram bilgilerini <a href="brands.html">Markalar</a> › Düzenle'de girin (adım adım anlatım orada).</p>
+<div><button class="btn btn-primary" type="submit">Kaydet</button></div>
+</form>
+</section><section class="card" id="rapor">
+<h2>Rapor</h2>
+<p class="small muted">Aylık müşteri raporunda (PDF) görünecek ajans bilgileri. Boş bırakılırsa rapor ajans adı ve logosu olmadan hazırlanır.</p>
+<form action="#" class="stack" enctype="multipart/form-data" method="post">
+
+<label>Ajans adı
+      <input autocomplete="organization" maxlength="80" name="ajans_adi" type="text" value="Örnek Medya Ajansı"/>
+</label>
+<label>Ajans logosu (PNG veya JPG, en fazla 2 MB)
+      <input accept=".png,.jpg,.jpeg,image/png,image/jpeg" name="ajans_logo" type="file"/>
+</label>
+<label class="inline-check"><input name="tg_ozet" type="checkbox" value="1"/> Ayın 1'inde Telegram özeti gönder</label>
+<p class="small muted">Her markaya geçen ayın kısa özeti, o markanın kendi Telegram bilgileriyle gider (program o gün kapalıysa, ilk açıldığında). <strong>Önce Bildirimler bölümünde “Paylaşım sonuçlarını Telegram'a da gönder” seçeneğini açın</strong> ve her markanın Telegram bilgilerini Markalar › Düzenle'de girin.</p>
+<div><button class="btn btn-primary" type="submit">Kaydet</button></div>
+</form>
+</section><section class="card" id="yapay-zeka">
+<h2>Yapay zekâ</h2>
+<p class="small muted">Paylaşım formundaki “Metin öner” düğmesi yalnız bu bilgisayarda kurulu yapay zekâyı kullanır. Metinleriniz internete gönderilmez, ücret ödenmez.</p><p class="demo-not small">Demo notu: Metin önerisi için bilgisayara bir kez “Yapay zekâ kurulumu” yapılır; bu ücretli ayrı bir hizmettir. Kurulumdan sonra öneriler için ayrıca ücret ödenmez.</p>
+<p role="status"><span class="badge badge-draft">Kurulu değil</span> Bu bilgisayarda yapay zekâ kurulu değil — kurulum için satıcınızla görüşün.</p>
+</section>
+<section class="card" id="guncelleme">
+<h2>Güncelleme <details class="help-pop">
+<summary class="help-btn" title="Yardım: Güncelleme"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Güncelleme</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Güncelleme</strong></p>
+<p>Program yeni sürümleri kendiliğinden kurar: her gece (varsayılan 03:00) yeni sürüm var mı bakılır, varsa kurulur.</p>
+<ul>
+<li><strong>Şimdi güncelle:</strong> Ayarlar › Güncelleme bölümünde. En geç 5 dakika içinde başlar; program birkaç dakika kapanır ve kendiliğinden yeniden açılır.</li>
+<li><strong>Verileriniz korunur:</strong> güncellemeden önce bir kopyası alınır (program klasöründe <em>yedekler</em>). Bir şey ters giderse önceki sürüm geri konur.</li>
+<li><strong>Yalnız Tavexus'un hazırladığı sürümler</strong> kurulur; indirilen dosya kurulmadan önce denetlenir.</li>
+<li>Bilgisayar o saatte kapalıysa güncelleme bir sonraki gece yapılır. Saati veya otomatik kurulumu aynı bölümden değiştirebilirsiniz.</li>
+<li>İnternet yoksa güncelleme yapılmaz; program eskisi gibi çalışmaya devam eder.</li>
+<li>Gece güncellemesi için bilgisayar o saatte açık ve Windows oturumunuz açık olmalı (program kapalı olabilir).</li>
+<li><strong>"Kurulum.bat'ı bir kez çalıştırın" yazıyorsa:</strong> programın kurulu olduğu klasördeki (ör. D:\Tavexus Social Manager) Kurulum.bat'a çift tıklayın, yönetici iznine "Evet" deyin ve "onarılsın mı?" sorusuna E yazın. Verileriniz korunur; uyarı kaybolur. Kurulum.bat'ı yalnız bu klasörden çalıştırın; başka bir yerden gelen (e-posta, indirilen) dosyayı çalıştırmayın. Kurulum.bat'tan sonra da uyarı geçmezse Tavexus satıcınıza haber verin.</li>
+</ul>
+<p>Güncellemeyi yalnız Yönetici başlatabilir.</p>
+</div>
+</details></h2>
+<p class="small muted">Otomatik güncelleme bu kurulumda yok. Programı Kurulum.bat ile kurun veya onarın; sonra yeni sürümler burada görünür.</p>
+<p class="small muted">Kurulu sürüm: <strong>0.5.0</strong></p>
+</section>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

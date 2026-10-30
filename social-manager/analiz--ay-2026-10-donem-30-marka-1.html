@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Analiz · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="static/analiz.css" rel="stylesheet"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="active" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Analiz</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Analiz"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Analiz</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Analiz</strong></p>
+<p>Analiz sayfası, markalarınızın hesaplarındaki takipçi, erişim, izlenme ve etkileşim sayılarını gösterir. Sayılar her gün bir kez kendiliğinden okunur ve bu bilgisayarda saklanır.</p>
+<ul>
+<li>Sayılar yalnız program açıkken ve kasa açıkken toplanır. Program kapalı kaldığı günler “veri yok” görünür.</li>
+<li>Her hesap yalnız kendi kayıtlı bilgileriyle okunur; markalar birbirine karışmaz.</li>
+<li>Bir hesapta “Analiz için yeniden bağlayın” yazıyorsa, <strong>Hesaplar</strong> sayfasında o hesabı yeniden bağlayın ve okuma iznini verin.</li>
+<li>“En iyi gün ve saat” en az 10 gönderinin sayısı okunduktan sonra görünür.</li>
+<li>Telegram kanallarında yalnız üye sayısı okunabilir; gönderi başına sayı yoktur.</li>
+<li>Günlük ayrıntı 24 ay saklanır; daha eski aylar aylık özet olarak kalır.</li>
+</ul>
+<p class="small"><a href="yardim.html#analiz">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-primary" href="analiz-rapor--marka-1.html">Aylık rapor</a></div>
+</div>
+<form action="#" class="filter-bar analiz-filtre" data-demo-get="/analiz" method="get">
+<label>Marka
+    <select name="marka">
+<option value="">Bütün markalarım</option>
+<option selected="" value="1">Yıldız Pastanesi</option><option value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select>
+</label>
+<label>Dönem
+    <select name="donem">
+<option selected="" value="30">Son 30 gün</option>
+<option value="ay">Bir ay</option>
+</select>
+</label>
+<label>Ay
+    <select name="ay">
+<option value="2026-10">Ekim 2026</option><option value="2026-09">Eylül 2026</option><option value="2026-08">Ağustos 2026</option><option value="2026-07">Temmuz 2026</option><option value="2026-06">Haziran 2026</option><option value="2026-05">Mayıs 2026</option><option value="2026-04">Nisan 2026</option><option value="2026-03">Mart 2026</option><option value="2026-02">Şubat 2026</option><option value="2026-01">Ocak 2026</option><option value="2025-12">Aralık 2025</option><option value="2025-11">Kasım 2025</option><option value="2025-10">Ekim 2025</option><option value="2025-09">Eylül 2025</option><option value="2025-08">Ağustos 2025</option><option value="2025-07">Temmuz 2025</option><option value="2025-06">Haziran 2025</option><option value="2025-05">Mayıs 2025</option><option value="2025-04">Nisan 2025</option><option value="2025-03">Mart 2025</option><option value="2025-02">Şubat 2025</option><option value="2025-01">Ocak 2025</option><option value="2024-12">Aralık 2024</option><option value="2024-11">Kasım 2024</option>
+</select>
+</label>
+<button class="btn" type="submit">Göster</button>
+</form>
+<p class="small muted">Gösterilen dönem: <strong>Son 30 gün</strong> (24.09.2026 – 23.10.2026). Ay seçimi yalnız “Bir ay” dönemiyle kullanılır.</p>
+<div class="analiz-kartlar">
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (Facebook)</strong>
+<span class="small muted">Yıldız Pastanesi · Facebook</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>1.983</dd></div>
+<div><dt>Değişim</dt><dd>+183</dd></div>
+<div><dt>Erişim</dt><dd>15.128</dd></div>
+<div><dt>İzlenme</dt><dd>11.527</dd></div>
+<div><dt>Etkileşim</dt><dd>1.869</dd></div>
+<div><dt>Gönderi</dt><dd>5</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Son 30 gün" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 11.1,43.6 19.1,41.8 27.2,40.6 35.3,38.6 43.3,35.8 51.4,33.8 59.5,33.3 67.6,33.1 75.6,30.3 83.7,29.2 91.8,26.9 99.8,25.3 107.9,23.0 116.0,23.4 124.0,21.4 132.1,19.8 140.2,20.0 148.2,17.7 156.3,16.8 164.4,14.5 172.4,14.7 180.5,12.2 188.6,12.6 196.7,10.8 204.7,8.0 212.8,6.4 220.9,4.8 228.9,3.2 237.0,3.0" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (son 30 gün)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (Instagram)</strong>
+<span class="small muted">Yıldız Pastanesi · Instagram</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>3.583</dd></div>
+<div><dt>Değişim</dt><dd>+127</dd></div>
+<div><dt>Erişim</dt><dd>14.964</dd></div>
+<div><dt>İzlenme</dt><dd>9.240</dd></div>
+<div><dt>Etkileşim</dt><dd>2.084</dd></div>
+<div><dt>Gönderi</dt><dd>2</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Son 30 gün" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 11.1,44.3 19.1,42.4 27.2,39.1 35.3,38.2 43.3,36.5 51.4,35.6 59.5,34.9 67.6,32.0 75.6,29.0 83.7,25.8 91.8,24.5 99.8,23.5 107.9,23.8 116.0,24.5 124.0,21.9 132.1,20.6 140.2,19.3 148.2,16.0 156.3,16.0 164.4,13.1 172.4,9.8 180.5,10.5 188.6,9.8 196.7,7.6 204.7,8.2 212.8,5.6 220.9,3.0 228.9,3.7 237.0,3.7" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (son 30 gün)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (YouTube)</strong>
+<span class="small muted">Yıldız Pastanesi · YouTube</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>691</dd></div>
+<div><dt>Değişim</dt><dd>+148</dd></div>
+<div><dt>Erişim</dt><dd>veri yok</dd></div>
+<div><dt>İzlenme</dt><dd>11.253</dd></div>
+<div><dt>Etkileşim</dt><dd>1.885</dd></div>
+<div><dt>Gönderi</dt><dd>0</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Son 30 gün" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 11.1,44.4 19.1,44.4 27.2,44.7 35.3,45.0 43.3,44.4 51.4,44.7 59.5,41.3 67.6,39.6 75.6,38.8 83.7,37.9 91.8,35.1 99.8,33.6 107.9,30.8 116.0,30.0 124.0,28.3 132.1,24.9 140.2,24.0 148.2,21.2 156.3,18.0 164.4,15.2 172.4,12.1 180.5,12.1 188.6,10.1 196.7,9.5 204.7,9.8 212.8,6.7 220.9,6.7 228.9,5.8 237.0,3.0" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (son 30 gün)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+</div>
+<div class="grid analiz-alt">
+<section class="card">
+<h2>En iyi gönderiler</h2>
+<ol class="list analiz-liste">
+<li>
+<strong>Kasım ayı kampanyası</strong>
+<span class="small muted">Facebook · Yıldız Pastanesi (Facebook) · 22.10.2026 12:00</span>
+<span class="small">Etkileşim 159 · İzlenme 2.635 · Beğeni 121 · Yorum 10</span>
+</li>
+<li>
+<strong>Yeni ürün: fıstıklı kurabiye</strong>
+<span class="small muted">Facebook · Yıldız Pastanesi (Facebook) · 16.10.2026 18:00</span>
+<span class="small">Etkileşim 153 · İzlenme 1.513 · Beğeni 90 · Yorum 24</span>
+</li>
+<li>
+<strong>Doğum günü pastası siparişi</strong>
+<span class="small muted">Facebook · Yıldız Pastanesi (Facebook) · 30.09.2026 12:00</span>
+<span class="small">Etkileşim 146 · İzlenme 303 · Beğeni 118 · Yorum 5</span>
+</li>
+<li>
+<strong>Cumhuriyet Bayramı'na özel</strong>
+<span class="small muted">Instagram · Yıldız Pastanesi (Instagram) · 04.10.2026 10:00</span>
+<span class="small">Etkileşim 101 · İzlenme 997 · Beğeni 60 · Yorum 12</span>
+</li>
+<li>
+<strong>Günün tatlısı: çilekli pasta</strong>
+<span class="small muted">Facebook · Yıldız Pastanesi (Facebook) · 10.10.2026 20:00</span>
+<span class="small">Etkileşim 91 · İzlenme 1.844 · Beğeni 39 · Yorum 6</span>
+</li>
+</ol>
+</section>
+<section class="card">
+<h2>En iyi gün ve saat</h2>
+<p>En çok etkileşim alan gün: <strong>Pazartesi</strong>. En iyi saat aralığı: <strong>12:00–13:00</strong>.</p>
+<ul class="analiz-gunler">
+<li><span>Pazartesi</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="100.0"></rect></svg><span class="small muted">2 gönderi</span></li>
+<li><span>Çarşamba</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="91.0"></rect></svg><span class="small muted">1 gönderi</span></li>
+<li><span>Perşembe</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="93.0"></rect></svg><span class="small muted">3 gönderi</span></li>
+<li><span>Cuma</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="66.0"></rect></svg><span class="small muted">2 gönderi</span></li>
+<li><span>Cumartesi</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="62.0"></rect></svg><span class="small muted">2 gönderi</span></li>
+<li><span>Pazar</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="46.0"></rect></svg><span class="small muted">2 gönderi</span></li>
+</ul>
+<p class="small muted">12 gönderinin yayın zamanı ve etkileşimine göre.</p>
+</section>
+</div>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>
