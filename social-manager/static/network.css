@@ -1,0 +1,9 @@
+/* Ayarlar > Çalışma biçimi (Aşama 2, ağ biçimi) */
+.net-card { margin-top: 1rem; }
+.net-steps { margin: 1rem 0 0; padding-left: 1.4rem; display: grid; gap: 1.25rem; }
+.net-steps > li::marker { font-weight: 700; color: var(--teal-d); }
+.net-steps h3 { margin: 0 0 .5rem; font-size: 1.02rem; }
+.net-steps select { max-width: 100%; }
+.net-phone { margin-top: .75rem; border-top: 1px solid var(--line); padding-top: .6rem; }
+.net-phone summary { cursor: pointer; font-weight: 600; color: var(--navy); }
+.net-big-link { font-size: 1.05rem; overflow-wrap: anywhere; }

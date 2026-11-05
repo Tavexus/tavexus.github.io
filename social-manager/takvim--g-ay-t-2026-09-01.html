@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Takvim · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="static/takvim.css" rel="stylesheet"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="active" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Takvim</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Takvim ve tekrarlayan paylaşımlar"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Takvim ve tekrarlayan paylaşımlar</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Takvim ve tekrarlayan paylaşımlar</strong></p>
+<p><strong>Takvim</strong> paylaşımlarınızı ay veya hafta olarak gösterir. Her paylaşımın yanında saati, markasının rengi ve durumu yazar: taslak, zamanlandı, onay bekliyor, paylaşıldı veya başarısız.</p>
+<p>Bir paylaşımı başka bir güne <strong>sürükleyip bırakın</strong>; saat aynı kalır. Telefonda veya klavyeyle paylaşımın altındaki <strong>Taşı</strong> düğmesine basıp yeni günü seçin. Paylaşılmış paylaşımlar ve geçmiş günler değiştirilemez.</p>
+<p>Boş bir güne tıklayınca o gün için yeni paylaşım hazırlanır.</p>
+<p><strong>Tekrarla:</strong> yeni paylaşım hazırlarken “Tekrarla” bölümünden her hafta (günleri seçin), her ay (ayın günü) veya belirli günler seçebilirsiniz. Bitiş tarihi gerekir (en fazla 12 ay, en fazla 100 paylaşım). Her tarih ayrı bir paylaşım olur; birini değiştirmek yalnız onu değiştirir. Paylaşımın sayfasındaki “Bütün tarihleri gör” bağlantısından <strong>Seriyi durdur</strong> diyebilirsiniz: henüz paylaşılmamış gelecek paylaşımlar silinir, paylaşılmış olanlar kalır.</p>
+<p class="small"><a href="yardim.html#takvim">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-primary" href="posts-new.html">+ Yeni paylaşım</a></div>
+</div>
+<form action="#" class="filter-bar" data-demo-get="/takvim" method="get">
+<input name="t" type="hidden" value="2026-09-01"/>
+<label>Görünüm
+    <select data-autosubmit="" name="g">
+<option selected="" value="ay">Ay</option>
+<option value="hafta">Hafta</option>
+</select></label>
+<label>Marka
+    <select data-autosubmit="" name="marka">
+<option value="">Tümü</option>
+<option value="1">Yıldız Pastanesi</option><option value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select></label>
+<noscript><button class="btn btn-sm" type="submit">Göster</button></noscript>
+</form>
+<nav aria-label="Takvimde gezin" class="tk-nav">
+<a class="btn btn-sm" data-demo-yok="" href="#">← Önceki</a>
+<h2>Eylül 2026</h2>
+<a class="btn btn-sm" href="takvim--g-ay-t-2026-10-24.html">Bugün</a>
+<a class="btn btn-sm" data-demo-yok="" href="#">Sonraki →</a>
+</nav>
+<ul aria-label="İşaretlerin anlamı" class="tk-legend small muted">
+<li><span aria-hidden="true" class="tk-icon tk-draft">✎</span> Taslak</li><li><span aria-hidden="true" class="tk-icon tk-scheduled">⏰</span> Zamanlandı</li><li><span aria-hidden="true" class="tk-icon tk-onay">⏳</span> Onay bekliyor</li><li><span aria-hidden="true" class="tk-icon tk-done">✓</span> Paylaşıldı</li><li><span aria-hidden="true" class="tk-icon tk-failed">✗</span> Başarısız</li>
+</ul>
+<p class="small muted">Paylaşımı başka bir güne sürükleyin ya da altındaki “Taşı” düğmesini kullanın; saat aynı kalır. Boş bir güne tıklayınca o gün için yeni paylaşım hazırlanır.</p>
+<div class="tk tk-ay" data-move-url="/takvim/tasi">
+<div aria-hidden="true" class="tk-head"><div>Pzt</div><div>Sal</div><div>Çar</div><div>Per</div><div>Cum</div><div>Cmt</div><div>Paz</div></div>
+<section aria-label="31 Ağustos, Pazartesi" class="tk-gun tk-gecmis tk-diger tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">31</span><span class="tk-ad">Pzt <span class="tk-ayadi">Ağustos</span></span>
+</div>
+</section>
+<section aria-label="1 Eylül, Salı" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">1</span><span class="tk-ad">Sal <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="2 Eylül, Çarşamba" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">2</span><span class="tk-ad">Çar <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="3 Eylül, Perşembe" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">3</span><span class="tk-ad">Per <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-1.html" title="Paylaşıldı · Yıldız Pastanesi">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">10:00</span>
+<span class="swatch" data-color="#C2185B"></span>
+<span class="sr-only">Yıldız Pastanesi, Paylaşıldı:</span>
+<span class="tk-metin">Günün tatlısı: çilekli pasta</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="4 Eylül, Cuma" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">4</span><span class="tk-ad">Cum <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="5 Eylül, Cumartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">5</span><span class="tk-ad">Cmt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="6 Eylül, Pazar" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">6</span><span class="tk-ad">Paz <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-2.html" title="Paylaşıldı · Mavi Kuaför">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">12:00</span>
+<span class="swatch" data-color="#1565C0"></span>
+<span class="sr-only">Mavi Kuaför, Paylaşıldı:</span>
+<span class="tk-metin">Randevu hatırlatması</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="7 Eylül, Pazartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">7</span><span class="tk-ad">Pzt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="8 Eylül, Salı" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">8</span><span class="tk-ad">Sal <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="9 Eylül, Çarşamba" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">9</span><span class="tk-ad">Çar <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-3.html" title="Paylaşıldı · Ege Kafe">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">18:00</span>
+<span class="swatch" data-color="#2E7D32"></span>
+<span class="sr-only">Ege Kafe, Paylaşıldı:</span>
+<span class="tk-metin">Kahvaltı tabağı</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="10 Eylül, Perşembe" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">10</span><span class="tk-ad">Per <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="11 Eylül, Cuma" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">11</span><span class="tk-ad">Cum <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="12 Eylül, Cumartesi" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">12</span><span class="tk-ad">Cmt <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-4.html" title="Paylaşıldı · Yıldız Pastanesi">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">20:00</span>
+<span class="swatch" data-color="#C2185B"></span>
+<span class="sr-only">Yıldız Pastanesi, Paylaşıldı:</span>
+<span class="tk-metin">Yeni ürün: fıstıklı kurabiye</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="13 Eylül, Pazar" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">13</span><span class="tk-ad">Paz <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="14 Eylül, Pazartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">14</span><span class="tk-ad">Pzt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="15 Eylül, Salı" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">15</span><span class="tk-ad">Sal <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-5.html" title="Paylaşıldı · Mavi Kuaför">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">10:00</span>
+<span class="swatch" data-color="#1565C0"></span>
+<span class="sr-only">Mavi Kuaför, Paylaşıldı:</span>
+<span class="tk-metin">Yeni çalışma saatleri</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="16 Eylül, Çarşamba" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">16</span><span class="tk-ad">Çar <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="17 Eylül, Perşembe" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">17</span><span class="tk-ad">Per <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="18 Eylül, Cuma" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">18</span><span class="tk-ad">Cum <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-6.html" title="Paylaşıldı · Ege Kafe">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">12:00</span>
+<span class="swatch" data-color="#2E7D32"></span>
+<span class="sr-only">Ege Kafe, Paylaşıldı:</span>
+<span class="tk-metin">Yeni menü</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="19 Eylül, Cumartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">19</span><span class="tk-ad">Cmt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="20 Eylül, Pazar" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">20</span><span class="tk-ad">Paz <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="21 Eylül, Pazartesi" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">21</span><span class="tk-ad">Pzt <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-7.html" title="Paylaşıldı · Yıldız Pastanesi">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">18:00</span>
+<span class="swatch" data-color="#C2185B"></span>
+<span class="sr-only">Yıldız Pastanesi, Paylaşıldı:</span>
+<span class="tk-metin">Kasım ayı kampanyası</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="22 Eylül, Salı" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">22</span><span class="tk-ad">Sal <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="23 Eylül, Çarşamba" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">23</span><span class="tk-ad">Çar <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="24 Eylül, Perşembe" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">24</span><span class="tk-ad">Per <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-8.html" title="Paylaşıldı · Mavi Kuaför">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">20:00</span>
+<span class="swatch" data-color="#1565C0"></span>
+<span class="sr-only">Mavi Kuaför, Paylaşıldı:</span>
+<span class="tk-metin">Randevu hatırlatması</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="25 Eylül, Cuma" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">25</span><span class="tk-ad">Cum <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="26 Eylül, Cumartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">26</span><span class="tk-ad">Cmt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="27 Eylül, Pazar" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">27</span><span class="tk-ad">Paz <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-9.html" title="Paylaşıldı · Ege Kafe">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">10:00</span>
+<span class="swatch" data-color="#2E7D32"></span>
+<span class="sr-only">Ege Kafe, Paylaşıldı:</span>
+<span class="tk-metin">Bahçemiz açık</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="28 Eylül, Pazartesi" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">28</span><span class="tk-ad">Pzt <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="29 Eylül, Salı" class="tk-gun tk-gecmis tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">29</span><span class="tk-ad">Sal <span class="tk-ayadi">Eylül</span></span>
+</div>
+</section>
+<section aria-label="30 Eylül, Çarşamba" class="tk-gun tk-gecmis">
+<div class="tk-gun-bas">
+<span class="tk-no">30</span><span class="tk-ad">Çar <span class="tk-ayadi">Eylül</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-10.html" title="Paylaşıldı · Yıldız Pastanesi">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">12:00</span>
+<span class="swatch" data-color="#C2185B"></span>
+<span class="sr-only">Yıldız Pastanesi, Paylaşıldı:</span>
+<span class="tk-metin">Doğum günü pastası siparişi</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="1 Ekim, Perşembe" class="tk-gun tk-gecmis tk-diger">
+<div class="tk-gun-bas">
+<span class="tk-no">1</span><span class="tk-ad">Per <span class="tk-ayadi">Ekim</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-11.html" title="Paylaşıldı · Mavi Kuaför">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">18:00</span>
+<span class="swatch" data-color="#1565C0"></span>
+<span class="sr-only">Mavi Kuaför, Paylaşıldı:</span>
+<span class="tk-metin">Saç bakım önerisi</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="2 Ekim, Cuma" class="tk-gun tk-gecmis tk-diger">
+<div class="tk-gun-bas">
+<span class="tk-no">2</span><span class="tk-ad">Cum <span class="tk-ayadi">Ekim</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-28.html" title="Paylaşıldı · Ege Kafe">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">09:30</span>
+<span class="swatch" data-color="#2E7D32"></span>
+<span class="sr-only">Ege Kafe, Paylaşıldı:</span>
+<span class="tk-metin">Haftanın kahvesi</span> <span class="tag">seri</span>
+</a>
+</li>
+<li class="tk-post">
+<a href="posts-12.html" title="Paylaşıldı · Ege Kafe">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">20:00</span>
+<span class="swatch" data-color="#2E7D32"></span>
+<span class="sr-only">Ege Kafe, Paylaşıldı:</span>
+<span class="tk-metin">Bahçemiz açık</span>
+</a>
+</li>
+</ul>
+</section>
+<section aria-label="3 Ekim, Cumartesi" class="tk-gun tk-gecmis tk-diger tk-bos">
+<div class="tk-gun-bas">
+<span class="tk-no">3</span><span class="tk-ad">Cmt <span class="tk-ayadi">Ekim</span></span>
+</div>
+</section>
+<section aria-label="4 Ekim, Pazar" class="tk-gun tk-gecmis tk-diger">
+<div class="tk-gun-bas">
+<span class="tk-no">4</span><span class="tk-ad">Paz <span class="tk-ayadi">Ekim</span></span>
+</div>
+<ul class="tk-liste">
+<li class="tk-post">
+<a href="posts-13.html" title="Paylaşıldı · Yıldız Pastanesi">
+<span aria-hidden="true" class="tk-icon tk-done">✓</span>
+<span class="tk-saat">10:00</span>
+<span class="swatch" data-color="#C2185B"></span>
+<span class="sr-only">Yıldız Pastanesi, Paylaşıldı:</span>
+<span class="tk-metin">Cumhuriyet Bayramı'na özel</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/takvim.js"></script>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="static/app.js"></script>
+</body>
+</html>

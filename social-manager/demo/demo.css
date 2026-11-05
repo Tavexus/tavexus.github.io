@@ -1,0 +1,14 @@
+/* Tavexus Social Manager — tarayıcı demosu: DEMO şeridi ve bilgi kutusu (yalnız demoda) */
+#tavexus-demo-serit { position: relative; z-index: 20; display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; background: #A67C2E; color: #fff; font: 13px/1.3 system-ui, sans-serif; padding: 7px 12px; }
+#tavexus-demo-serit a { color: #fff; }
+#tavexus-demo-serit .demo-teklif { font-weight: 700; background: rgba(0,0,0,.18); padding: 3px 10px; border-radius: 12px; text-decoration: none; }
+#tavexus-demo-serit .demo-kurulum { text-decoration: underline; }
+#tavexus-demo-serit .demo-kisa { display: none; }
+.demo-not { background: #FFF6E0; border-left: 4px solid #A67C2E; padding: .5rem .75rem; border-radius: 4px; color: #4A3A12; }
+@media (max-width: 700px) {
+  #tavexus-demo-serit { gap: 8px; padding: 6px 8px; }
+  #tavexus-demo-serit .demo-aciklama { display: none; }
+  #tavexus-demo-serit .demo-kisa { display: inline; }
+}
+#tavexus-demo-bilgi { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 99999; background: #22304A; color: #fff; padding: 10px 16px; border-radius: 8px; font: 14px system-ui, sans-serif; box-shadow: 0 6px 24px rgba(0,0,0,.25); max-width: 90vw; transition: opacity .3s; opacity: 0; pointer-events: none; }
+#tavexus-demo-bilgi.acik { opacity: 1; }

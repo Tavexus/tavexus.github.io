@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Kurulum · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<main class="auth-wrap">
+<div class="card auth-card">
+<div class="auth-logo"><span class="logo-mark">TSM</span></div>
+<p aria-label="Kurulum adımı" class="wizard-steps small">Adım 1 / 5</p>
+<h1>Tavexus Social Manager kurulumu</h1>
+<p class="muted">Önce sizin için bir <strong>Yönetici</strong> hesabı oluşturulur. Kasadaki tüm şifreler ve hesap bağlantılarınız parolanızla şifrelenip korunur. Çalışanlarınızı sonra <strong>Kullanıcılar</strong> sayfasından eklersiniz.</p>
+<div class="alert alert-info">Bir sonraki adımda size bir <strong>kurtarma kodu</strong> verilecek. Parolanızı unutursanız kasanızı bu kodla açarsınız.</div>
+<form action="#" autocomplete="off" data-demo-next="kurulum-kurtarma-kodu.html" method="post">
+
+<label>Adınız <small>(ekranlarda görünür, ör. Ayşe Yılmaz)</small>
+<input autocomplete="off" autofocus="" maxlength="60" name="display_name" type="text" value=""/></label>
+<label>Kullanıcı adı <small>(girişte yazacağınız kısa ad, ör. ayse — boşluksuz)</small>
+<input autocapitalize="none" autocomplete="off" maxlength="32" minlength="3" name="username" spellcheck="false" type="text" value=""/></label>
+<label>Parola <small>(en az 12 karakter)</small>
+<input aria-describedby="setup-password-strength setup-password-example" autocomplete="off" data-strength="setup-password-meter" id="setup-password" minlength="12" name="password" type="password"/></label>
+<div class="pw-meter" id="setup-password-meter">
+<div aria-hidden="true" class="pw-bar" data-pw-bar="" hidden=""><span class="pw-fill"></span></div>
+<p aria-live="polite" class="pw-text small" data-pw-text="" id="setup-password-strength"></p>
+<p class="small muted pw-example" id="setup-password-example">Örnek: üç kelime ve bir sayı: Deniz-Kalem-Bulut-47 (kendi kelimelerinizi seçin)</p>
+</div>
+<label>Parola (tekrar)
+      <input autocomplete="off" minlength="12" name="password2" type="password"/></label>
+<button class="btn btn-primary btn-block" type="submit">Kasayı oluştur</button>
+</form>
+</div>
+</main>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Hesaplar · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="active" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Hesaplar <details class="help-pop">
+<summary class="help-btn" title="Yardım: Hesap bağlama"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Hesap bağlama</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Hesap bağlama</strong></p>
+<h3>Hesap bağlama</h3>
+<ol>
+<li><strong>Hesaplar</strong> sayfasında markanızı seçin.</li>
+<li><strong>Facebook sayfanı bağla</strong>, <strong>Instagram'ı bağla</strong> veya <strong>YouTube'u bağla</strong> düğmesine basın.</li>
+<li>Açılan Facebook ya da Google sayfasında kendi hesabınızla girin ve <strong>izin verin</strong>.</li>
+<li>Facebook / Instagram için listeden sayfanızı veya hesabınızı işaretleyip <strong>Seçilenleri ekle</strong>'ye basın.
+    YouTube kendiliğinden eklenir.</li>
+</ol>
+<p>Bilgileriniz yalnız bu bilgisayarda, şifreli olarak saklanır.</p>
+<p><strong>Instagram</strong> yalnız bir Facebook sayfasına bağlı <strong>işletme</strong> veya <strong>içerik üreticisi</strong> hesabıyla çalışır.</p>
+<p><strong>YouTube</strong>, <strong>Facebook</strong> ve <strong>Instagram</strong>'ı programın kurulu olduğu bilgisayardan bağlayın (güvenlik için onay yalnız o bilgisayara geri döner). Telefondan veya başka bir bilgisayardan bu düğmeler soluk görünür.</p>
+<p>Üstte “bağlantısı bitti” yazarsa <strong>Yeniden bağlan</strong> düğmesine basın ve aynı adımları tekrarlayın.</p>
+<p class="small"><a href="yardim.html#baglan">Bütün yardım konuları</a></p>
+</div>
+</details></h1>
+</div>
+<section class="card connect-card" id="baglan">
+<h2>Hesap bağla <details class="help-pop">
+<summary class="help-btn" title="Yardım: Hesap bağlama"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Hesap bağlama</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Hesap bağlama</strong></p>
+<h3>Hesap bağlama</h3>
+<ol>
+<li><strong>Hesaplar</strong> sayfasında markanızı seçin.</li>
+<li><strong>Facebook sayfanı bağla</strong>, <strong>Instagram'ı bağla</strong> veya <strong>YouTube'u bağla</strong> düğmesine basın.</li>
+<li>Açılan Facebook ya da Google sayfasında kendi hesabınızla girin ve <strong>izin verin</strong>.</li>
+<li>Facebook / Instagram için listeden sayfanızı veya hesabınızı işaretleyip <strong>Seçilenleri ekle</strong>'ye basın.
+    YouTube kendiliğinden eklenir.</li>
+</ol>
+<p>Bilgileriniz yalnız bu bilgisayarda, şifreli olarak saklanır.</p>
+<p><strong>Instagram</strong> yalnız bir Facebook sayfasına bağlı <strong>işletme</strong> veya <strong>içerik üreticisi</strong> hesabıyla çalışır.</p>
+<p><strong>YouTube</strong>, <strong>Facebook</strong> ve <strong>Instagram</strong>'ı programın kurulu olduğu bilgisayardan bağlayın (güvenlik için onay yalnız o bilgisayara geri döner). Telefondan veya başka bir bilgisayardan bu düğmeler soluk görünür.</p>
+<p>Üstte “bağlantısı bitti” yazarsa <strong>Yeniden bağlan</strong> düğmesine basın ve aynı adımları tekrarlayın.</p>
+<p class="small"><a href="yardim.html#baglan">Bütün yardım konuları</a></p>
+</div>
+</details></h2>
+<form action="#" class="stack" data-demo-baglan="facebook" method="post">
+
+<label>Hangi marka için?
+      <select name="brand_id">
+<option value="">— Marka seçin —</option>
+<option value="1">Yıldız Pastanesi</option><option value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select></label>
+<div class="actions">
+<button class="btn btn-primary" name="platform" type="submit" value="facebook_page">Facebook sayfanı bağla</button>
+<button class="btn btn-primary" name="platform" type="submit" value="instagram_business">Instagram'ı bağla</button>
+<button class="btn btn-primary" name="platform" type="submit" value="youtube">YouTube'u bağla</button>
+<button aria-describedby="baglan-google-neden" class="btn btn-primary" disabled="" name="platform" title="Google’ın Tavexus’a onayı bekleniyor — hazır olunca açılacak." type="submit" value="google_business">Google İşletme Profilini bağla</button>
+</div>
+<p class="small muted" id="baglan-google-neden">Google İşletme Profili düğmesi soluk: Google’ın Tavexus’a onayı bekleniyor — hazır olunca açılacak.</p>
+</form>
+</section>
+<details class="card" data-gelismis="">
+<summary>Gelişmiş: bilgileri elle gir</summary>
+<p class="small muted">Kendi Facebook / Google uygulaması olanlar içindir. Çoğu kullanıcı yukarıdaki düğmeleri kullanır.</p>
+<p><a class="btn btn-sm" href="accounts-new.html">+ Yeni hesap (elle)</a></p>
+</details>
+<section class="card brand-section">
+<div class="section-head">
+<h2><span class="chip"><span class="swatch" data-color="#C2185B"></span>Yıldız Pastanesi</span></h2>
+</div>
+<div class="table-wrap">
+<table class="table">
+<thead><tr><th>Hesap</th><th>Platform</th><th>Bağlantı</th><th>Durum</th><th></th></tr></thead>
+<tbody>
+<tr class="" id="hesap-1">
+<td data-label="Hesap"><strong>Yıldız Pastanesi (Facebook)</strong></td>
+<td data-label="Platform">Facebook Sayfası</td>
+<td data-label="Bağlantı">Yıldız Pastanesi — Facebook Sayfası
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-1-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-2">
+<td data-label="Hesap"><strong>Yıldız Pastanesi (Instagram)</strong></td>
+<td data-label="Platform">Instagram İşletme</td>
+<td data-label="Bağlantı">Yıldız Pastanesi — Instagram
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-2-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-3">
+<td data-label="Hesap"><strong>Yıldız Pastanesi (YouTube)</strong></td>
+<td data-label="Platform">YouTube</td>
+<td data-label="Bağlantı">Yıldız Pastanesi — YouTube
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-3-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Tarayıcıda Google sayfası açılacak. Orada hesabınızı seçip izin verin. Devam edilsin mi?" data-demo-baglan="youtube" method="post"><button class="btn btn-sm" type="submit">Yeniden yetkilendir</button></form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="card brand-section">
+<div class="section-head">
+<h2><span class="chip"><span class="swatch" data-color="#1565C0"></span>Mavi Kuaför</span></h2>
+</div>
+<div class="table-wrap">
+<table class="table">
+<thead><tr><th>Hesap</th><th>Platform</th><th>Bağlantı</th><th>Durum</th><th></th></tr></thead>
+<tbody>
+<tr class="" id="hesap-4">
+<td data-label="Hesap"><strong>Mavi Kuaför (Facebook)</strong></td>
+<td data-label="Platform">Facebook Sayfası</td>
+<td data-label="Bağlantı">Mavi Kuaför — Facebook Sayfası
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-4-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-5">
+<td data-label="Hesap"><strong>Mavi Kuaför (Instagram)</strong></td>
+<td data-label="Platform">Instagram İşletme</td>
+<td data-label="Bağlantı">Mavi Kuaför — Instagram
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-5-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-6">
+<td data-label="Hesap"><strong>Mavi Kuaför (YouTube)</strong></td>
+<td data-label="Platform">YouTube</td>
+<td data-label="Bağlantı">Mavi Kuaför — YouTube
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-6-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Tarayıcıda Google sayfası açılacak. Orada hesabınızı seçip izin verin. Devam edilsin mi?" data-demo-baglan="youtube" method="post"><button class="btn btn-sm" type="submit">Yeniden yetkilendir</button></form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="card brand-section">
+<div class="section-head">
+<h2><span class="chip"><span class="swatch" data-color="#2E7D32"></span>Ege Kafe</span></h2>
+</div>
+<div class="table-wrap">
+<table class="table">
+<thead><tr><th>Hesap</th><th>Platform</th><th>Bağlantı</th><th>Durum</th><th></th></tr></thead>
+<tbody>
+<tr class="" id="hesap-7">
+<td data-label="Hesap"><strong>Ege Kafe (Facebook)</strong></td>
+<td data-label="Platform">Facebook Sayfası</td>
+<td data-label="Bağlantı">Ege Kafe — Facebook Sayfası
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-7-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-8">
+<td data-label="Hesap"><strong>Ege Kafe (Instagram)</strong></td>
+<td data-label="Platform">Instagram İşletme</td>
+<td data-label="Bağlantı">Ege Kafe — Instagram
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-8-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr class="" id="hesap-9">
+<td data-label="Hesap"><strong>Ege Kafe (YouTube)</strong></td>
+<td data-label="Platform">YouTube</td>
+<td data-label="Bağlantı">Ege Kafe — YouTube
+        
+        
+        </td>
+<td data-label="Durum"><span class="badge badge-done">Aktif</span></td>
+<td class="row-actions">
+<a class="btn btn-sm" href="accounts-9-edit.html">Düzenle</a>
+<form action="#" class="inline" method="post">
+<button class="btn btn-sm" type="submit">Bağlantıyı test et</button>
+</form>
+<form action="#" class="inline" data-confirm="Tarayıcıda Google sayfası açılacak. Orada hesabınızı seçip izin verin. Devam edilsin mi?" data-demo-baglan="youtube" method="post"><button class="btn btn-sm" type="submit">Yeniden yetkilendir</button></form>
+<form action="#" class="inline" data-confirm="Bu hesap silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

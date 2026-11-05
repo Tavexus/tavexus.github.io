@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Kullanıcılar · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="active" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<link href="static/security.css" rel="stylesheet"/>
+<link href="static/takvim.css" rel="stylesheet"/>
+<div class="page-head">
+<h1>Kullanıcılar</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Kullanıcılar ve roller"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Kullanıcılar ve roller</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Kullanıcılar ve roller</strong></p>
+<p>Çalışanlarınıza kendi kullanıcı adlarını verin; herkes kendi parolasıyla girer ve yaptığı işler <strong>Kayıtlar</strong> sayfasında görünür.</p>
+<ul>
+<li><strong>Yönetici:</strong> her şeyi yapar.</li>
+<li><strong>Editör:</strong> kendisine verilen markaların hesaplarını ve paylaşımlarını yönetir.</li>
+<li><strong>Sadece paylaşım:</strong> yalnız paylaşım hazırlar ve gönderir.</li>
+</ul>
+<p class="small"><a href="yardim.html#kullanicilar">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><button aria-describedby="kullanici-sinir" class="btn btn-primary" disabled="" type="button">+ Kullanıcı ekle</button></div>
+</div>
+<p class="small text-warning" id="kullanici-sinir">Paketiniz en fazla 3 kullanıcı içeriyor (şu an 3). Daha fazlası için paketi büyütün: Ayarlar › Lisans.</p>
+<details class="card roles-help">
+<summary>Roller ne yapabilir?</summary>
+<ul class="plain-list small">
+<li><strong>Yönetici:</strong> Her şeyi yapar: kullanıcılar, ayarlar, yedek, bütün markalar ve kasa.</li><li><strong>Editör:</strong> Yetkili olduğu markalarda paylaşım, hesaplar ve o markaların kasa kayıtları.</li><li><strong>Sadece paylaşım:</strong> Yetkili olduğu markalarda yalnız paylaşım hazırlar ve zamanlar; şifreleri görmez. Kasa kilitliyken giremez: önce bir Yönetici veya Editör giriş yapmalıdır.</li>
+</ul>
+</details>
+<div class="user-list">
+<section class="card user-card" id="kullanici-2">
+<div class="user-head">
+<div>
+<h2>Can Demir</h2>
+<p class="small muted">Kullanıcı adı: <strong>can</strong> · Editör ·
+          <span class="dot dot-ok"></span>Etkin
+          </p>
+<p class="small muted">Son giriş: henüz yok</p>
+</div>
+</div>
+<form action="#" class="user-row" data-confirm-admin="Can Demir Yönetici yapılsın mı? Yönetici her şeyi yapar: kasanın tamamını (bütün şifreleri), bütün markaları, kullanıcıları ve ayarları görür ve değiştirir." data-confirm-editor="Can Demir Editör yapılsın mı? Editör, yetkili olduğu markaların kasa kayıtlarını (şifrelerini) görür ve değiştirebilir." data-confirm-share="Can Demir Sadece paylaşım yapılsın mı? Bu kişi artık şifreleri göremez. Güvenlik için kasanın anahtarı yenilenir; ardından size yeni bir kurtarma kodu verilecek, yazdırıp saklamanız gerekir." data-role-from="editor" method="post">
+
+<label class="user-role">Rol
+        <select name="role">
+<option value="yonetici">Yönetici</option><option selected="" value="editor">Editör</option><option value="paylasim">Sadece paylaşım</option>
+</select></label>
+<button class="btn btn-sm" type="submit">Rolü kaydet</button>
+</form>
+<form action="#" class="user-brands" method="post">
+
+<fieldset>
+<legend>Markalar <span class="small muted">(bu kişi yalnız işaretli markaları görür)</span></legend>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="1"/> <span>Yıldız Pastanesi</span></label>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="2"/> <span>Mavi Kuaför</span></label>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="3"/> <span>Ege Kafe</span></label>
+<div><button class="btn btn-sm" type="submit">Markaları kaydet</button></div>
+</fieldset>
+</form>
+<div class="actions user-actions">
+<form action="#" class="inline" data-confirm="Can Demir için yeni bir geçici parola oluşturulsun mu? Eski parolası hemen geçersiz olur ve açık oturumları kapanır." method="post">
+<button class="btn btn-sm" type="submit">Parolayı sıfırla</button>
+</form>
+<form action="#" class="inline" data-confirm="Can Demir pasif yapılsın mı? Bu kişi hemen çıkış yapar ve artık giremez. Güvenlik için kasanın anahtarı yenilenir (bu kişinin elinde kalmış eski bir kopya işe yaramaz). Ardından size yeni bir kurtarma kodu verilecek; yazdırıp saklamanız gerekir." method="post">
+<button class="btn btn-sm btn-danger" type="submit">Pasif yap</button>
+</form>
+</div>
+</section>
+<section class="card user-card" id="kullanici-1">
+<div class="user-head">
+<div>
+<h2>Elif Kaya <span class="tag">siz</span></h2>
+<p class="small muted">Kullanıcı adı: <strong>elif</strong> · Yönetici ·
+          <span class="dot dot-ok"></span>Etkin
+          </p>
+<p class="small muted">Son giriş: 24.10.2026 11:02</p>
+</div>
+</div>
+<form action="#" class="user-row" data-confirm-admin="Elif Kaya Yönetici yapılsın mı? Yönetici her şeyi yapar: kasanın tamamını (bütün şifreleri), bütün markaları, kullanıcıları ve ayarları görür ve değiştirir." data-confirm-editor="Elif Kaya Editör yapılsın mı? Editör, yetkili olduğu markaların kasa kayıtlarını (şifrelerini) görür ve değiştirebilir." data-confirm-share="Elif Kaya Sadece paylaşım yapılsın mı? Bu kişi artık şifreleri göremez. Güvenlik için kasanın anahtarı yenilenir; ardından size yeni bir kurtarma kodu verilecek, yazdırıp saklamanız gerekir." data-role-from="yonetici" method="post">
+
+<label class="user-role">Rol
+        <select aria-describedby="rol-neden-1" disabled="" name="role">
+<option selected="" value="yonetici">Yönetici</option><option value="editor">Editör</option><option value="paylasim">Sadece paylaşım</option>
+</select></label>
+<button class="btn btn-sm" disabled="" type="submit">Rolü kaydet</button>
+</form>
+<p class="small muted" id="rol-neden-1">Son etkin Yönetici başka bir role geçemez.</p>
+<form action="#" class="user-brands" method="post">
+
+<fieldset aria-describedby="marka-neden-1" disabled="">
+<legend>Markalar <span class="small muted">(bu kişi yalnız işaretli markaları görür)</span></legend>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="1"/> <span>Yıldız Pastanesi</span></label>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="2"/> <span>Mavi Kuaför</span></label>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="3"/> <span>Ege Kafe</span></label>
+<div><button class="btn btn-sm" type="submit">Markaları kaydet</button></div>
+</fieldset>
+<p class="small muted" id="marka-neden-1">Yönetici her zaman bütün markaları görür.</p>
+</form>
+<div class="actions user-actions">
+<form action="#" class="inline" data-confirm="Elif Kaya için yeni bir geçici parola oluşturulsun mu? Eski parolası hemen geçersiz olur ve açık oturumları kapanır." method="post">
+<button class="btn btn-sm" disabled="" title="Kendi parolanızı Hesabım sayfasından değiştirin." type="submit">Parolayı sıfırla</button>
+</form>
+<form action="#" class="inline" data-confirm="Elif Kaya pasif yapılsın mı? Bu kişi hemen çıkış yapar ve artık giremez. Güvenlik için kasanın anahtarı yenilenir (bu kişinin elinde kalmış eski bir kopya işe yaramaz). Ardından size yeni bir kurtarma kodu verilecek; yazdırıp saklamanız gerekir." method="post">
+<button class="btn btn-sm btn-danger" disabled="" title="Son etkin Yönetici pasif yapılamaz." type="submit">Pasif yap</button>
+</form>
+</div>
+<p class="small muted">Kendi parolanızı Hesabım sayfasından değiştirin. Son etkin Yönetici pasif yapılamaz.</p>
+</section>
+<section class="card user-card" id="kullanici-3">
+<div class="user-head">
+<div>
+<h2>Zeynep Ak</h2>
+<p class="small muted">Kullanıcı adı: <strong>zeynep</strong> · Sadece paylaşım ·
+          <span class="dot dot-ok"></span>Etkin
+          </p>
+<p class="small muted">Son giriş: 24.10.2026 11:02</p>
+</div>
+</div>
+<form action="#" class="user-row" data-confirm-admin="Zeynep Ak Yönetici yapılsın mı? Yönetici her şeyi yapar: kasanın tamamını (bütün şifreleri), bütün markaları, kullanıcıları ve ayarları görür ve değiştirir." data-confirm-editor="Zeynep Ak Editör yapılsın mı? Editör, yetkili olduğu markaların kasa kayıtlarını (şifrelerini) görür ve değiştirebilir." data-confirm-share="Zeynep Ak Sadece paylaşım yapılsın mı? Bu kişi artık şifreleri göremez. Güvenlik için kasanın anahtarı yenilenir; ardından size yeni bir kurtarma kodu verilecek, yazdırıp saklamanız gerekir." data-role-from="paylasim" method="post">
+
+<label class="user-role">Rol
+        <select name="role">
+<option value="yonetici">Yönetici</option><option value="editor">Editör</option><option selected="" value="paylasim">Sadece paylaşım</option>
+</select></label>
+<button class="btn btn-sm" type="submit">Rolü kaydet</button>
+</form>
+<form action="#" class="user-brands" method="post">
+
+<fieldset>
+<legend>Markalar <span class="small muted">(bu kişi yalnız işaretli markaları görür)</span></legend>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="1"/> <span>Yıldız Pastanesi</span></label>
+<label class="inline-check"><input checked="" name="brand_ids" type="checkbox" value="2"/> <span>Mavi Kuaför</span></label>
+<label class="inline-check"><input name="brand_ids" type="checkbox" value="3"/> <span>Ege Kafe</span></label>
+<div><button class="btn btn-sm" type="submit">Markaları kaydet</button></div>
+</fieldset>
+</form>
+<form action="#" class="onay-ayar" method="post">
+
+<label class="inline-check"><input checked="" name="needs_approval" type="checkbox" value="1"/>
+<span>Paylaşımları onaya gitsin <span class="small muted">(Yönetici veya Editör onaylayınca paylaşılır)</span></span></label>
+<div><button class="btn btn-sm" type="submit">Onay ayarını kaydet</button></div>
+</form>
+<div class="actions user-actions">
+<form action="#" class="inline" data-confirm="Zeynep Ak için yeni bir geçici parola oluşturulsun mu? Eski parolası hemen geçersiz olur ve açık oturumları kapanır." method="post">
+<button class="btn btn-sm" type="submit">Parolayı sıfırla</button>
+</form>
+<form action="#" class="inline" data-confirm="Zeynep Ak pasif yapılsın mı? Bu kişi hemen çıkış yapar ve artık giremez. Güvenlik için kasanın anahtarı yenilenir (bu kişinin elinde kalmış eski bir kopya işe yaramaz). Ardından size yeni bir kurtarma kodu verilecek; yazdırıp saklamanız gerekir." method="post">
+<button class="btn btn-sm btn-danger" type="submit">Pasif yap</button>
+</form>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

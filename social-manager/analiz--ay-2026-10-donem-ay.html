@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Analiz · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="static/analiz.css" rel="stylesheet"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="active" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Analiz</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Analiz"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Analiz</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Analiz</strong></p>
+<p>Analiz sayfası, markalarınızın hesaplarındaki takipçi, erişim, izlenme ve etkileşim sayılarını gösterir. Sayılar her gün bir kez kendiliğinden okunur ve bu bilgisayarda saklanır.</p>
+<ul>
+<li>Sayılar yalnız program açıkken ve kasa açıkken toplanır. Program kapalı kaldığı günler “veri yok” görünür.</li>
+<li>Her hesap yalnız kendi kayıtlı bilgileriyle okunur; markalar birbirine karışmaz.</li>
+<li>Bir hesapta “Analiz için yeniden bağlayın” yazıyorsa, <strong>Hesaplar</strong> sayfasında o hesabı yeniden bağlayın ve okuma iznini verin.</li>
+<li>“En iyi gün ve saat” en az 10 gönderinin sayısı okunduktan sonra görünür.</li>
+<li>Telegram kanallarında yalnız üye sayısı okunabilir; gönderi başına sayı yoktur.</li>
+<li>Günlük ayrıntı 24 ay saklanır; daha eski aylar aylık özet olarak kalır.</li>
+</ul>
+<p class="small"><a href="yardim.html#analiz">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-primary" href="analiz-rapor.html">Aylık rapor</a></div>
+</div>
+<form action="#" class="filter-bar analiz-filtre" data-demo-get="/analiz" method="get">
+<label>Marka
+    <select name="marka">
+<option value="">Bütün markalarım</option>
+<option value="1">Yıldız Pastanesi</option><option value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select>
+</label>
+<label>Dönem
+    <select name="donem">
+<option value="30">Son 30 gün</option>
+<option selected="" value="ay">Bir ay</option>
+</select>
+</label>
+<label>Ay
+    <select name="ay">
+<option selected="" value="2026-10">Ekim 2026</option><option value="2026-09">Eylül 2026</option><option value="2026-08">Ağustos 2026</option><option value="2026-07">Temmuz 2026</option><option value="2026-06">Haziran 2026</option><option value="2026-05">Mayıs 2026</option><option value="2026-04">Nisan 2026</option><option value="2026-03">Mart 2026</option><option value="2026-02">Şubat 2026</option><option value="2026-01">Ocak 2026</option><option value="2025-12">Aralık 2025</option><option value="2025-11">Kasım 2025</option><option value="2025-10">Ekim 2025</option><option value="2025-09">Eylül 2025</option><option value="2025-08">Ağustos 2025</option><option value="2025-07">Temmuz 2025</option><option value="2025-06">Haziran 2025</option><option value="2025-05">Mayıs 2025</option><option value="2025-04">Nisan 2025</option><option value="2025-03">Mart 2025</option><option value="2025-02">Şubat 2025</option><option value="2025-01">Ocak 2025</option><option value="2024-12">Aralık 2024</option><option value="2024-11">Kasım 2024</option>
+</select>
+</label>
+<button class="btn" type="submit">Göster</button>
+</form>
+<p class="small muted">Gösterilen dönem: <strong>Ekim 2026</strong> (01.10.2026 – 31.10.2026). Ay seçimi yalnız “Bir ay” dönemiyle kullanılır.</p>
+<div class="analiz-kartlar">
+<section class="card analiz-kart" data-border-color="#2E7D32">
+<div class="analiz-kart-bas">
+<strong>Ege Kafe (Facebook)</strong>
+<span class="small muted">Ege Kafe · Facebook</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>2.200</dd></div>
+<div><dt>Değişim</dt><dd>+74</dd></div>
+<div><dt>Erişim</dt><dd>13.077</dd></div>
+<div><dt>İzlenme</dt><dd>7.078</dd></div>
+<div><dt>Etkileşim</dt><dd>1.563</dd></div>
+<div><dt>Gönderi</dt><dd>8</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,38.2 18.6,36.5 26.4,34.8 34.2,31.9 42.0,32.5 49.8,28.0 57.6,25.7 65.4,24.0 73.2,22.9 81.0,20.6 88.8,21.7 96.6,18.3 104.4,16.6 112.2,15.5 120.0,14.9 127.8,14.4 135.6,12.6 143.4,8.1 151.2,8.1 159.0,8.7 166.8,3.0 174.6,3.0" stroke="#2E7D32" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#2E7D32">
+<div class="analiz-kart-bas">
+<strong>Ege Kafe (Instagram)</strong>
+<span class="small muted">Ege Kafe · Instagram</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>3.937</dd></div>
+<div><dt>Değişim</dt><dd>+94</dd></div>
+<div><dt>Erişim</dt><dd>14.621</dd></div>
+<div><dt>İzlenme</dt><dd>9.140</dd></div>
+<div><dt>Etkileşim</dt><dd>1.441</dd></div>
+<div><dt>Gönderi</dt><dd>6</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,43.7 18.6,41.4 26.4,37.9 34.2,37.4 42.0,33.8 49.8,32.0 57.6,28.5 65.4,23.1 73.2,20.0 81.0,15.1 88.8,15.5 96.6,14.6 104.4,14.2 112.2,13.7 120.0,14.6 127.8,14.6 135.6,14.2 143.4,13.3 151.2,8.4 159.0,8.8 166.8,7.5 174.6,3.0" stroke="#2E7D32" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#2E7D32">
+<div class="analiz-kart-bas">
+<strong>Ege Kafe (YouTube)</strong>
+<span class="small muted">Ege Kafe · YouTube</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>1.234</dd></div>
+<div><dt>Değişim</dt><dd>+85</dd></div>
+<div><dt>Erişim</dt><dd>veri yok</dd></div>
+<div><dt>İzlenme</dt><dd>6.707</dd></div>
+<div><dt>Etkileşim</dt><dd>1.305</dd></div>
+<div><dt>Gönderi</dt><dd>0</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,42.0 18.6,39.6 26.4,35.1 34.2,35.6 42.0,33.6 49.8,34.1 57.6,34.1 65.4,31.2 73.2,32.2 81.0,28.2 88.8,29.2 96.6,27.2 104.4,24.7 112.2,22.3 120.0,16.3 127.8,10.9 135.6,11.4 143.4,8.9 151.2,4.5 159.0,4.5 166.8,5.5 174.6,3.0" stroke="#2E7D32" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#1565C0">
+<div class="analiz-kart-bas">
+<strong>Mavi Kuaför (Facebook)</strong>
+<span class="small muted">Mavi Kuaför · Facebook</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>2.035</dd></div>
+<div><dt>Değişim</dt><dd>+88</dd></div>
+<div><dt>Erişim</dt><dd>11.695</dd></div>
+<div><dt>İzlenme</dt><dd>8.129</dd></div>
+<div><dt>Etkileşim</dt><dd>1.478</dd></div>
+<div><dt>Gönderi</dt><dd>4</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,42.1 18.6,38.3 26.4,35.0 34.2,35.0 42.0,31.2 49.8,30.2 57.6,27.3 65.4,25.0 73.2,25.9 81.0,22.1 88.8,23.0 96.6,21.6 104.4,17.8 112.2,17.8 120.0,15.4 127.8,14.0 135.6,9.2 143.4,8.7 151.2,6.8 159.0,6.3 166.8,4.9 174.6,3.0" stroke="#1565C0" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#1565C0">
+<div class="analiz-kart-bas">
+<strong>Mavi Kuaför (Instagram)</strong>
+<span class="small muted">Mavi Kuaför · Instagram</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>3.399</dd></div>
+<div><dt>Değişim</dt><dd>+87</dd></div>
+<div><dt>Erişim</dt><dd>13.370</dd></div>
+<div><dt>İzlenme</dt><dd>6.973</dd></div>
+<div><dt>Etkileşim</dt><dd>1.472</dd></div>
+<div><dt>Gönderi</dt><dd>2</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,44.1 10.8,43.6 18.6,43.6 26.4,44.1 34.2,45.0 42.0,44.1 49.8,44.5 57.6,44.1 65.4,41.2 73.2,35.6 81.0,32.7 88.8,32.3 96.6,31.3 104.4,31.8 112.2,30.8 120.0,25.2 127.8,20.9 135.6,17.2 143.4,12.0 151.2,9.1 159.0,8.7 166.8,6.8 174.6,3.0" stroke="#1565C0" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#1565C0">
+<div class="analiz-kart-bas">
+<strong>Mavi Kuaför (YouTube)</strong>
+<span class="small muted">Mavi Kuaför · YouTube</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>674</dd></div>
+<div><dt>Değişim</dt><dd>+105</dd></div>
+<div><dt>Erişim</dt><dd>veri yok</dd></div>
+<div><dt>İzlenme</dt><dd>9.343</dd></div>
+<div><dt>Etkileşim</dt><dd>1.565</dd></div>
+<div><dt>Gönderi</dt><dd>0</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,44.6 18.6,40.6 26.4,36.2 34.2,32.2 42.0,30.6 49.8,29.4 57.6,26.6 65.4,24.2 73.2,23.4 81.0,18.6 88.8,18.6 96.6,19.4 104.4,19.4 112.2,16.6 120.0,15.0 127.8,15.8 135.6,16.6 143.4,15.8 151.2,12.2 159.0,9.0 166.8,4.6 174.6,3.0" stroke="#1565C0" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (Facebook)</strong>
+<span class="small muted">Yıldız Pastanesi · Facebook</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>1.983</dd></div>
+<div><dt>Değişim</dt><dd>+132</dd></div>
+<div><dt>Erişim</dt><dd>11.522</dd></div>
+<div><dt>İzlenme</dt><dd>8.516</dd></div>
+<div><dt>Etkileşim</dt><dd>1.294</dd></div>
+<div><dt>Gönderi</dt><dd>4</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,44.7 18.6,40.9 26.4,39.3 34.2,36.1 42.0,33.9 49.8,30.7 57.6,31.3 65.4,28.5 73.2,26.2 81.0,26.5 88.8,23.4 96.6,22.1 104.4,18.9 112.2,19.2 120.0,15.7 127.8,16.4 135.6,13.8 143.4,10.0 151.2,7.8 159.0,5.5 166.8,3.3 174.6,3.0" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (Instagram)</strong>
+<span class="small muted">Yıldız Pastanesi · Instagram</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>3.583</dd></div>
+<div><dt>Değişim</dt><dd>+96</dd></div>
+<div><dt>Erişim</dt><dd>11.064</dd></div>
+<div><dt>İzlenme</dt><dd>7.349</dd></div>
+<div><dt>Etkileşim</dt><dd>1.622</dd></div>
+<div><dt>Gönderi</dt><dd>2</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,41.1 18.6,37.3 26.4,33.0 34.2,31.3 42.0,30.0 49.8,30.4 57.6,31.3 65.4,27.9 73.2,26.1 81.0,24.4 88.8,20.1 96.6,20.1 104.4,16.3 112.2,12.0 120.0,12.9 127.8,12.0 135.6,9.0 143.4,9.9 151.2,6.4 159.0,3.0 166.8,3.9 174.6,3.9" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+<section class="card analiz-kart" data-border-color="#C2185B">
+<div class="analiz-kart-bas">
+<strong>Yıldız Pastanesi (YouTube)</strong>
+<span class="small muted">Yıldız Pastanesi · YouTube</span>
+</div>
+<dl class="stats">
+<div><dt>Takipçi</dt><dd>691</dd></div>
+<div><dt>Değişim</dt><dd>+135</dd></div>
+<div><dt>Erişim</dt><dd>veri yok</dd></div>
+<div><dt>İzlenme</dt><dd>9.081</dd></div>
+<div><dt>Etkileşim</dt><dd>1.432</dd></div>
+<div><dt>Gönderi</dt><dd>0</dd></div>
+</dl>
+<svg aria-label="Takipçi değişimi: Ekim 2026" class="analiz-egri" preserveaspectratio="none" role="img" viewbox="0 0 240 48">
+<polyline fill="none" points="3.0,45.0 10.8,43.1 18.6,42.2 26.4,41.3 34.2,38.2 42.0,36.6 49.8,33.5 57.6,32.6 65.4,30.7 73.2,27.0 81.0,26.0 88.8,22.9 96.6,19.5 104.4,16.4 112.2,13.0 120.0,13.0 127.8,10.8 135.6,10.2 143.4,10.5 151.2,7.0 159.0,7.0 166.8,6.1 174.6,3.0" stroke="#C2185B" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+</svg>
+<p class="small muted analiz-egri-not">Takipçi eğrisi (ekim 2026)</p>
+<p class="small muted">Son okuma: 24.10.2026 11:02</p>
+</section>
+</div>
+<div class="grid analiz-alt">
+<section class="card">
+<h2>En iyi gönderiler</h2>
+<ol class="list analiz-liste">
+<li>
+<strong>Öğrenci indirimi</strong>
+<span class="small muted">Facebook · Mavi Kuaför (Facebook) · 06.10.2026 12:00</span>
+<span class="small">Etkileşim 241 · İzlenme 2.116 · Beğeni 180 · Yorum 15</span>
+</li>
+<li>
+<strong>Saç bakım önerisi</strong>
+<span class="small muted">Instagram · Mavi Kuaför (Instagram) · 01.10.2026 18:00</span>
+<span class="small">Etkileşim 216 · İzlenme 244 · Beğeni 180 · Yorum 3</span>
+</li>
+<li>
+<strong>Haftanın kahvesi</strong>
+<span class="small muted">Facebook · Ege Kafe (Facebook) · 02.10.2026 09:30</span>
+<span class="small">Etkileşim 207 · İzlenme 631 · Beğeni 157 · Yorum 20</span>
+</li>
+<li>
+<strong>Saç bakım önerisi</strong>
+<span class="small muted">Facebook · Mavi Kuaför (Facebook) · 01.10.2026 18:00</span>
+<span class="small">Etkileşim 199 · İzlenme 446 · Beğeni 167 · Yorum 20</span>
+</li>
+<li>
+<strong>Haftanın kahvesi</strong>
+<span class="small muted">Facebook · Ege Kafe (Facebook) · 23.10.2026 09:30</span>
+<span class="small">Etkileşim 163 · İzlenme 2.365 · Beğeni 145 · Yorum 6</span>
+</li>
+</ol>
+</section>
+<section class="card">
+<h2>En iyi gün ve saat</h2>
+<p>En çok etkileşim alan gün: <strong>Perşembe</strong>. En iyi saat aralığı: <strong>18:00–19:00</strong>.</p>
+<ul class="analiz-gunler">
+<li><span>Pazartesi</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="81.0"></rect></svg><span class="small muted">4 gönderi</span></li>
+<li><span>Salı</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="95.0"></rect></svg><span class="small muted">5 gönderi</span></li>
+<li><span>Çarşamba</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="88.0"></rect></svg><span class="small muted">4 gönderi</span></li>
+<li><span>Perşembe</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="100.0"></rect></svg><span class="small muted">8 gönderi</span></li>
+<li><span>Cuma</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="76.0"></rect></svg><span class="small muted">12 gönderi</span></li>
+<li><span>Cumartesi</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="67.0"></rect></svg><span class="small muted">2 gönderi</span></li>
+<li><span>Pazar</span><svg aria-hidden="true" class="analiz-cubuk" preserveaspectratio="none" viewbox="0 0 100 10"><rect height="10" width="76.0"></rect></svg><span class="small muted">6 gönderi</span></li>
+</ul>
+<p class="small muted">41 gönderinin yayın zamanı ve etkileşimine göre.</p>
+</section>
+</div>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>
