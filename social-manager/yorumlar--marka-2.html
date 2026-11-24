@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Yorumlar · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="active" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Yorumlar</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Yorum kutusu"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Yorum kutusu</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Yorum kutusu</strong></p>
+<p><strong>Yorumlar</strong> sayfasında Facebook sayfanıza, Instagram işletme hesabınıza ve YouTube kanalınıza son 30 günde paylaştığınız gönderilere gelen yorumlar tek listede görünür. Liste program açıkken 15 dakikada bir yenilenir.</p>
+<ol>
+<li>Üstten marka, platform veya <strong>Yanıtlanmadı</strong> seçerek listeyi daraltın.</li>
+<li>Yorumun altındaki kutuya yanıtınızı yazıp <strong>Yanıtı gönder</strong>'e basın. Yanıt hemen o platformda görünür.</li>
+</ol>
+<p>Sayfanız veya kanalınız bir yorumu (bu programdan ya da doğrudan platformdan) yanıtladıysa yorum <strong>Yanıtlandı</strong> olarak işaretlenir.</p>
+<p>Yalnız size atanmış markaların yorumlarını görür ve yanıtlarsınız. Paylaşımları onaya giden kullanıcılar yorumlara yanıt veremez; yanıtı Yönetici veya Editör yazar.</p>
+<p>Yorumlar müşterilerinizin yazdıklarıdır: yalnız bu bilgisayarda (ve yedeklerinde) saklanır, başka yere gönderilmez ve <strong>90 gün sonra kendiliğinden silinir</strong>. Günlük yedeklerde en fazla 30 gün daha kalır; yani bir yorum en geç yaklaşık 4 ay sonra bu bilgisayardan tamamen silinmiş olur.</p>
+<p>Bir hesap için “yeniden bağlayın” yazıyorsa Hesaplar sayfasında o hesabı yeniden bağlayın: yorumları okumak için yeni izin gerekir.</p>
+<p class="small"><a href="yardim.html#yorumlar">Bütün yardım konuları</a></p>
+</div>
+</details>
+</div>
+<p class="small muted">Son 30 günde paylaştığınız gönderilere gelen Facebook, Instagram ve YouTube yorumları. Liste 15 dakikada bir yenilenir; yorumlar yalnız bu bilgisayarda saklanır ve 90 gün sonra silinir.</p>
+<form action="#" class="filter-bar" data-demo-get="/yorumlar" method="get">
+<label>Marka
+    <select data-autosubmit="" name="marka">
+<option value="">Tümü</option>
+<option value="1">Yıldız Pastanesi</option><option selected="" value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option>
+</select></label>
+<label>Platform
+    <select data-autosubmit="" name="platform">
+<option value="">Tümü</option>
+<option value="facebook_page">Facebook Sayfası</option><option value="instagram_business">Instagram İşletme</option><option value="youtube">YouTube</option>
+</select></label>
+<label>Durum
+    <select data-autosubmit="" name="durum">
+<option value="">Tümü</option>
+<option value="yanitlanmadi">Yanıtlanmadı</option>
+</select></label>
+<noscript><button class="btn btn-sm" type="submit">Süz</button></noscript>
+</form>
+<ul class="notify-list">
+<li class="card notify-item" id="yorum-5">
+<p class="small"><span class="chip"><span class="swatch" data-color="#1565C0"></span>Mavi Kuaför</span> · Instagram İşletme · Mavi Kuaför (Instagram) · 22.10.2026 20:02
+      <span class="badge badge-done">Yanıtlandı</span></p>
+<p class="small muted">Gönderi: Saç bakım önerisi</p>
+<p><strong>Burcu A.</strong></p>
+<p class="post-text">Bal köpüğü rengi bana yakışır mı sizce?</p>
+<p class="small muted">Yanıtınız (Elif Kaya, 22.10.2026 21:02): Salonumuza gelin, cilt tonunuza göre birlikte seçelim.</p>
+<details>
+<summary>Yanıt yaz</summary>
+<form action="#" class="stack" method="post">
+
+<input name="next" type="hidden" value="/yorumlar?marka=2"/>
+<label class="sr-only" for="yanit-5">Yanıtınız</label>
+<textarea id="yanit-5" maxlength="2000" name="text" required="" rows="3"></textarea>
+<p class="small muted">En fazla 2000 karakter. Yanıt hemen Instagram İşletme üzerinde görünür.</p>
+<div><button class="btn btn-primary btn-sm" type="submit">Yanıtı gönder</button></div>
+</form>
+</details>
+</li>
+<li class="card notify-item" id="yorum-6">
+<p class="small"><span class="chip"><span class="swatch" data-color="#1565C0"></span>Mavi Kuaför</span> · Facebook Sayfası · Mavi Kuaför (Facebook) · 22.10.2026 11:02
+      <span class="badge badge-scheduled">Yanıtlanmadı</span></p>
+<p class="small muted">Gönderi: Öğrenci indirimi</p>
+<p><strong>Hande Ç.</strong></p>
+<p class="post-text">Cumartesi öğleden sonra yer var mı?</p>
+<details open="">
+<summary>Yanıt yaz</summary>
+<form action="#" class="stack" method="post">
+
+<input name="next" type="hidden" value="/yorumlar?marka=2"/>
+<label class="sr-only" for="yanit-6">Yanıtınız</label>
+<textarea id="yanit-6" maxlength="2000" name="text" required="" rows="3"></textarea>
+<p class="small muted">En fazla 2000 karakter. Yanıt hemen Facebook Sayfası üzerinde görünür.</p>
+<div><button class="btn btn-primary btn-sm" type="submit">Yanıtı gönder</button></div>
+</form>
+</details>
+</li>
+<li class="card notify-item" id="yorum-7">
+<p class="small"><span class="chip"><span class="swatch" data-color="#1565C0"></span>Mavi Kuaför</span> · Instagram İşletme · Mavi Kuaför (Instagram) · 22.10.2026 02:02
+      <span class="badge badge-done">Yanıtlandı</span></p>
+<p class="small muted">Gönderi: Saç bakım önerisi</p>
+<p><strong>Gizem E.</strong></p>
+<p class="post-text">Öğrenci indirimi hafta sonu da geçerli mi?</p>
+<p class="small muted">Yanıtınız (Elif Kaya, 22.10.2026 03:02): Evet, her gün geçerli.</p>
+<details>
+<summary>Yanıt yaz</summary>
+<form action="#" class="stack" method="post">
+
+<input name="next" type="hidden" value="/yorumlar?marka=2"/>
+<label class="sr-only" for="yanit-7">Yanıtınız</label>
+<textarea id="yanit-7" maxlength="2000" name="text" required="" rows="3"></textarea>
+<p class="small muted">En fazla 2000 karakter. Yanıt hemen Instagram İşletme üzerinde görünür.</p>
+<div><button class="btn btn-primary btn-sm" type="submit">Yanıtı gönder</button></div>
+</form>
+</details>
+</li>
+</ul>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

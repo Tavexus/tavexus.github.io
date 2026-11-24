@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Bildirimler · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="active" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span></div>
+</div>
+<div class="page-head">
+<h1>Bildirimler</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Bildirimler"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Bildirimler</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Bildirimler</strong></p>
+<p>Her paylaşımın sonucu burada görünür: tamamlandı, kısmen yapıldı veya yapılamadı. Yeni bildirim olduğunda üstteki şeritte haber verilir.</p>
+<p>İsterseniz sonuçlar Telegram'a da gönderilir: <strong>Ayarlar › Bildirimler</strong>.</p>
+<p class="small"><a href="yardim.html#bildirimler">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><form action="#" class="inline" method="post"><input name="last_id" type="hidden" value="1"/><button class="btn" type="submit">Hepsini okundu say</button></form></div>
+</div>
+<div class="card flush">
+<ul class="notify-list">
+<li class="notify-item notify-info notify-new">
+<span class="badge notify-badge">Bilgi</span>
+<span class="notify-text">Onay bekliyor: Paylaşım #37 — Yıldız Pastanesi. Hazırlayan: Zeynep Ak.</span>
+<span class="small muted">24.10.2026 11:02 · yeni</span>
+<a class="small" href="posts-37.html">Paylaşımı aç</a>
+</li>
+</ul>
+</div>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

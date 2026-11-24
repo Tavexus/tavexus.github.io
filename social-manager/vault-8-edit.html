@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Kaydı düzenle · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two active" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Kaydı düzenle</h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Kasa (şifreler)"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Kasa (şifreler)</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Kasa (şifreler)</strong></p>
+<p>Kasa, hesaplarınızın şifrelerini ve bağlantı bilgilerini şifreli olarak saklar. Hesap bağladığınızda gerekli bilgiler kasaya kendiliğinden kaydedilir; çoğu zaman kasayı açmanız gerekmez.</p>
+<p>Kasayı yalnız Yönetici ve Editör görür. Program kilitliyken kasa da kilitlidir.</p>
+<p class="small"><a href="yardim.html#kasa">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-ghost" href="vault--group-2.html">← Kasaya dön</a></div>
+</div>
+<form action="#" autocomplete="off" class="card form-card" id="entry-form" method="post">
+
+<div class="form-grid">
+<label>Başlık *<input maxlength="200" name="title" required="" type="text" value="Mavi Kuaför — Web sitesi yönetimi"/></label>
+<label>Grup *
+      <select name="group_id" required="">
+<option value="1">Yıldız Pastanesi</option><option selected="" value="2">Mavi Kuaför</option><option value="3">Ege Kafe</option><option value="4">Ajans</option>
+</select></label>
+<label>Kullanıcı adı / e-posta<input autocomplete="off" name="username" type="text" value="yonetim@mavikuafor.ornek.test"/></label>
+<label>Adres (URL)<input name="url" placeholder="https://…" type="text" value=""/></label>
+</div>
+<label>Şifre</label>
+<div class="secret-input">
+<input autocomplete="new-password" data-changed-target="password_changed" data-entry="8" data-key="password" id="password" name="password" placeholder="•••••••• (değişmedi — görmek için Göster)" type="password" value=""/>
+<input id="password_changed" name="password_changed" type="hidden" value="0"/>
+<button class="btn btn-sm" data-toggle-input="password" type="button">Göster</button>
+<button class="btn btn-sm" data-copy-input="password" type="button">Kopyala</button>
+<button class="btn btn-sm btn-accent" data-generate="password" title="Rastgele güçlü şifre üret" type="button">Üret</button>
+<label class="inline-check small"><input checked="" id="gen-symbols" type="checkbox"/> Semboller</label>
+<input aria-label="Uzunluk (8–128)" class="w-num" form="" id="gen-length" title="Uzunluk (8–128)" type="number" value="20"/>
+</div>
+<details class="mt field-section" data-gelismis="">
+<summary><strong>Gelişmiş: özel alanlar</strong> <span class="small muted">(hesap bağlama bilgileri; çoğu zaman kendiliğinden dolar)</span></summary>
+<p class="small muted">Platform bilgileri buraya: ör. <span class="mono">page_id</span>, <span class="mono">page_access_token</span>, <span class="mono">bot_token</span>, <span class="mono">chat_id</span>, <span class="mono">client_id</span>… Değerler şifreli saklanır.</p>
+<div class="field-rows" id="field-rows">
+</div>
+<template id="field-row-template">
+<div class="field-row">
+<input aria-label="Alan adı" autocomplete="off" list="field-name-suggestions" name="field_name" placeholder="Alan adı (yazmaya başlayın, öneri çıkar)" type="text" value=""/>
+<input aria-label="Değer" autocomplete="new-password" name="field_value" type="password" value=""/>
+<input name="field_orig" type="hidden" value=""/>
+<input name="field_changed" type="hidden" value="1"/>
+<button class="btn btn-xs" data-row-toggle="" type="button">Göster</button>
+<button class="btn btn-xs" data-row-copy="" type="button">Kopyala</button>
+<button class="btn btn-xs btn-danger" data-row-remove="" title="Alanı kaldır" type="button">✕</button>
+</div>
+</template>
+<datalist id="field-name-suggestions">
+<option value="page_id">page_id — Facebook Sayfa ID</option>
+<option value="page_access_token">page_access_token — Facebook sayfa erişim token'ı</option>
+<option value="ig_user_id">ig_user_id — Instagram kullanıcı ID</option>
+<option value="access_token">access_token — Instagram erişim token'ı</option>
+<option value="fb_page_id">fb_page_id — Instagram için Facebook Sayfa ID</option>
+<option value="client_id">client_id — YouTube OAuth Client ID</option>
+<option value="client_secret">client_secret — YouTube OAuth Client Secret</option>
+<option value="refresh_token">refresh_token — YouTube refresh token</option>
+<option value="privacy">privacy — YouTube gizlilik (public / unlisted / private)</option>
+<option value="bot_token">bot_token — Telegram bot token</option>
+<option value="chat_id">chat_id — Telegram kanal / sohbet ID</option>
+<option value="api_key">api_key — Buffer API anahtarı</option>
+<option value="organization_id">organization_id — Buffer organizasyon ID</option>
+<option value="tiktok_channel_id">tiktok_channel_id — Buffer TikTok kanal ID</option>
+</datalist>
+<p class="small muted">Alan adı yazarken öneriler çıkar. “Bot Token”, “bot-token” gibi yazımlar kaydederken bilinen ada (ör. <span class="mono">bot_token</span>) düzeltilir.</p>
+<button class="btn btn-sm" id="add-field" type="button">+ Alan ekle</button>
+</details>
+<label class="mt">Notlar<textarea name="notes" rows="4">Hayali örnek kayıt.</textarea></label>
+<div class="form-actions">
+<button class="btn btn-primary" type="submit">Kaydet</button>
+<a class="btn btn-ghost" href="vault--group-2.html">İptal</a>
+</div>
+</form>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>

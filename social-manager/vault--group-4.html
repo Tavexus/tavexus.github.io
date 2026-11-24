@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Kasa · Tavexus Social Manager</title>
+<link href="static/style.css" rel="stylesheet"/>
+<link href="static/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="demo/demo.css" rel="stylesheet"/></head>
+<body><div id="tavexus-demo-serit"><b>DEMO</b><span class="demo-kisa">Örnek veriler · kaydedilmez</span><span class="demo-aciklama">Tavexus Social Manager — hayali örnek verilerle. Yaptığınız değişiklikler kaydedilmez.</span><a class="demo-kurulum" href="kurulum.html">İlk kurulum adımları</a><a class="demo-teklif" href="https://wa.me/905454301969?text=Tavexus%20Social%20Manager%20hakk%C4%B1nda%20bilgi%20%2F%20teklif%20almak%20istiyorum." rel="noopener" target="_blank">WhatsApp ile teklif isteyin</a><a href="tel:05454301969">0545 430 19 69</a></div>
+<header class="topbar">
+<a class="brand-logo" href="index.html"><span class="logo-mark">TSM</span><span class="logo-text">Tavexus Social Manager</span></a>
+<input aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç veya kapat" class="nav-toggle" id="nav-toggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label" for="nav-toggle"><span></span></label>
+<nav aria-label="Ana menü" class="nav" id="ana-menu">
+<a class="" href="index.html">Panel</a>
+<a class="nav-two active" href="vault.html" title="Şifre kasası: hesap şifreleriniz şifreli saklanır">Kasa<span class="nav-sub">Şifre kasası</span></a>
+<a class="" href="brands.html">Markalar</a>
+<a class="" href="accounts.html">Hesaplar</a>
+<a class="" href="posts.html">Paylaşımlar</a>
+<a class="" href="takvim.html">Takvim</a>
+<a class="" href="analiz.html">Analiz</a>
+<a class="" href="yorumlar.html">Yorumlar</a>
+<a class="" href="bildirimler.html">Bildirimler</a>
+<a class="" href="settings.html">Ayarlar</a>
+<a class="" href="kullanicilar.html">Kullanıcılar</a>
+<a class="" href="kayitlar.html">Kayıtlar</a>
+<a class="" href="yardim.html">Yardım</a>
+<a class="nav-user" href="hesabim.html" title="Hesabım: parolanız ve adınız">Elif Kaya</a>
+<form action="#" class="nav-lock nav-logout" data-demo-mesaj="Bu bir demo — gerçek programda oturumunuz kapanır (çıkış yapılır)." method="post">
+
+<button aria-describedby="ipucu-cikis" class="btn btn-lock btn-logout" title="Yalnız sizin oturumunuz kapanır; zamanlanmış paylaşımlar sürer" type="submit">Çıkış yap</button>
+<span class="nav-hint" id="ipucu-cikis">Yalnız siz çıkarsınız; paylaşımlar sürer.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="9 paylaşım bekliyor. Kilitlerseniz, bir Yönetici giriş yapana kadar paylaşılmaz. Kilitleyince herkesin oturumu kapanır ve kasayı yalnız bir Yönetici girişi yeniden açar; ondan sonra Editör ve Sadece paylaşım kullanıcıları da girebilir. Kilitlensin mi?" data-demo-mesaj="Bu bir demo — gerçek programda kasa kilitlenir; herkesin oturumu kapanır." method="post">
+
+<button aria-describedby="ipucu-kilit" class="btn btn-lock" title="Kasayı tamamen kilitle: herkesin oturumu kapanır, zamanlanmış paylaşımlar durur" type="submit">Kasayı kilitle</button>
+<span class="nav-hint" id="ipucu-kilit">Herkes çıkar; paylaşımlar Yönetici girene kadar durur.</span>
+</form>
+<form action="#" class="nav-lock" data-confirm="Tavexus Social Manager kapatılsın mı? Zamanlanmış paylaşımlar program kapalıyken yapılmaz." data-demo-mesaj="Bu bir demo — gerçek programda program kapanır." method="post">
+
+<button aria-describedby="ipucu-kapat" class="btn btn-quit" title="Programı tamamen kapat" type="submit">Programı kapat</button>
+<span class="nav-hint" id="ipucu-kapat">Program kapanır; kapalıyken paylaşım yapılmaz.</span>
+</form>
+</nav>
+</header>
+<main class="container">
+<div aria-live="polite" class="status-strip" role="status">
+<div class="status-item status-warn"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 paylaşım onay bekliyor</span> <a class="btn btn-sm status-action" href="posts--status-onay.html">Göster</a></div>
+<div class="status-item status-info"><span aria-hidden="true" class="status-dot"></span><span class="status-text">1 yeni bildirim</span> <a class="btn btn-sm status-action" href="bildirimler.html">Bildirimler</a></div>
+</div>
+<div class="page-head">
+<h1>Kasa <small class="h-sub">Şifre kasası</small></h1><details class="help-pop">
+<summary class="help-btn" title="Yardım: Kasa (şifreler)"><span aria-hidden="true">?</span><span class="sr-only">Yardım: Kasa (şifreler)</span></summary>
+<div class="help-body">
+<p class="help-title"><strong>Kasa (şifreler)</strong></p>
+<p>Kasa, hesaplarınızın şifrelerini ve bağlantı bilgilerini şifreli olarak saklar. Hesap bağladığınızda gerekli bilgiler kasaya kendiliğinden kaydedilir; çoğu zaman kasayı açmanız gerekmez.</p>
+<p>Kasayı yalnız Yönetici ve Editör görür. Program kilitliyken kasa da kilitlidir.</p>
+<p class="small"><a href="yardim.html#kasa">Bütün yardım konuları</a></p>
+</div>
+</details>
+<div class="actions"><a class="btn btn-primary" href="vault-new--group-4.html">+ Yeni kayıt</a>
+<a class="btn" href="kasa-ice-aktar.html">İçe aktar</a></div>
+</div>
+<div class="vault-layout">
+<aside class="card sidebar">
+<h2>Gruplar</h2>
+<ul class="group-list">
+<li class=""><a href="vault.html"><span class="group-name">Tümü</span> <span class="count">14</span></a></li>
+<li class=""><a href="vault--group-1.html" title="Yıldız Pastanesi"><span class="group-name">Yıldız Pastanesi</span> <span class="count">4</span></a></li>
+<li class=""><a href="vault--group-2.html" title="Mavi Kuaför"><span class="group-name">Mavi Kuaför</span> <span class="count">4</span></a></li>
+<li class=""><a href="vault--group-3.html" title="Ege Kafe"><span class="group-name">Ege Kafe</span> <span class="count">4</span></a></li>
+<li class="active"><a href="vault--group-4.html" title="Ajans"><span class="group-name">Ajans</span> <span class="count">2</span></a></li>
+</ul>
+<details class="group-tools">
+<summary>Grup ekle</summary>
+<form action="#" class="stack" method="post">
+
+<input maxlength="80" name="name" placeholder="Grup adı" required="" type="text"/>
+<button class="btn btn-sm" type="submit">Ekle</button>
+</form>
+</details>
+<details class="group-tools">
+<summary>“Ajans” grubunu düzenle</summary>
+<form action="#" class="stack" method="post">
+
+<input maxlength="80" name="name" required="" type="text" value="Ajans"/>
+<button class="btn btn-sm" type="submit">Yeniden adlandır</button>
+</form>
+<form action="#" class="inline" data-confirm="Bu grup silinsin mi? (Grup boş olmalı)" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Grubu sil</button>
+</form>
+</details>
+</aside>
+<section class="vault-main">
+<form action="#" class="search-bar" data-demo-get="/vault" method="get">
+<input name="group" type="hidden" value="4"/>
+<input aria-label="Ara" name="q" placeholder="Başlık, kullanıcı adı, adres veya notlarda ara…" type="search" value=""/>
+<button class="btn" type="submit">Ara</button>
+</form>
+<p class="small muted">Kopyalanan değer 30 sn sonra panodan silinir. Windows pano geçmişi (Win+V) açıksa orada kalabilir.</p>
+<div class="table-wrap card flush">
+<table class="table vault-table">
+<thead><tr><th>Başlık</th><th>Kullanıcı adı</th><th>Şifre / alanlar</th><th class="hide-sm">Güncelleme</th><th></th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Başlık"><strong>Ajans e-posta</strong>
+<div class="small muted">Ajans</div>
+</td>
+<td data-label="Kullanıcı adı"><span class="mono">bilgi@ornekmedya.test</span>
+<button class="btn btn-xs" data-copy-secret="username" data-entry="13" type="button">Kopyala</button></td>
+<td data-label="Şifre / alanlar">
+<div class="secret-row"><span class="secret mono" data-secret-out="">••••••••</span>
+<button class="btn btn-xs" data-entry="13" data-reveal="password" type="button">Göster</button>
+<button class="btn btn-xs" data-copy-secret="password" data-entry="13" type="button">Kopyala</button></div>
+</td>
+<td class="hide-sm small muted" data-label="Güncelleme">24.10.2026 11:02</td>
+<td class="row-actions">
+<a class="btn btn-sm" href="vault-13-edit.html">Düzenle</a>
+<form action="#" class="inline" data-confirm="Bu kayıt kalıcı olarak silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+<tr>
+<td data-label="Başlık"><strong>Fatura programı</strong>
+<div class="small muted">Ajans</div>
+</td>
+<td data-label="Kullanıcı adı"><span class="mono">ornekmedya</span>
+<button class="btn btn-xs" data-copy-secret="username" data-entry="14" type="button">Kopyala</button></td>
+<td data-label="Şifre / alanlar">
+<div class="secret-row"><span class="secret mono" data-secret-out="">••••••••</span>
+<button class="btn btn-xs" data-entry="14" data-reveal="password" type="button">Göster</button>
+<button class="btn btn-xs" data-copy-secret="password" data-entry="14" type="button">Kopyala</button></div>
+</td>
+<td class="hide-sm small muted" data-label="Güncelleme">24.10.2026 11:02</td>
+<td class="row-actions">
+<a class="btn btn-sm" href="vault-14-edit.html">Düzenle</a>
+<form action="#" class="inline" data-confirm="Bu kayıt kalıcı olarak silinsin mi?" method="post">
+<button class="btn btn-danger btn-sm" type="submit">Sil</button>
+</form>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">Tavexus Social Manager v0.5.0 · Yalnızca bu bilgisayar · Otomatik kilit: 10 dk</footer>
+<script src="demo/sayfalar.js"></script><script src="demo/demo.js"></script><script src="static/app.js"></script>
+</body>
+</html>
